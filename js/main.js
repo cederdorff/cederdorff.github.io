@@ -1,18 +1,20 @@
 'use strict';
 
-(function() {
+document.addEventListener("DOMContentLoaded", initTypedJs());
 
-  // ---------- typed.js ---------- //
-  let typed = new Typed('.typed', {
+// ---------- typed.js ---------- //
+function initTypedJs() {
+  new Typed('.typed', {
     strings: ["Rasmus Cederdorff.", "a Freelancer.", "a Lecturer.", "a Web Developer.", "an App Developer.", "a Web Architect.", "a Teacher."],
     typeSpeed: 100,
     loop: true,
   });
-})();
+};
+
 // ---------- smooth scroll ---------- //
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {
+window.onscroll = function () {
   scrollFunction()
 };
 
