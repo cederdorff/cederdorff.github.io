@@ -109,6 +109,10 @@ a:hover {
   margin-top: 20px;
 }
 
+.list-social span{
+  display: none;
+}
+
 img {
   max-width: 100%;
 }
