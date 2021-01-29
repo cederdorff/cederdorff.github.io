@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
 document.addEventListener("DOMContentLoaded", initTypedJs());
 
 // ---------- typed.js ---------- //
 function initTypedJs() {
-  new Typed('.typed', {
+  new Typed(".typed", {
     strings: ["Rasmus Cederdorff.", "a Freelancer.", "a Lecturer.", "a Web Developer.", "an App Developer.", "a Web Architect.", "a Teacher."],
     typeSpeed: 100,
     loop: true,
