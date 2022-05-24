@@ -500,3 +500,34 @@ footer .logo {
     padding: 3em;
     width: 300px;
 }
+
+/* ========== TYPED JS STYLING ========== */
+
+.typed-cursor {
+    display: none;
+}
+
+.typed-cursor--blink {
+    opacity: 1;
+}
+.typed-cursor--blink {
+    animation: typedjsBlink 0.7s infinite;
+    -webkit-animation: typedjsBlink 0.7s infinite;
+    animation: typedjsBlink 0.7s infinite;
+}
+@keyframes typedjsBlink {
+    50% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes typedjsBlink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
