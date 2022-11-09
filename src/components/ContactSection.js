@@ -20,9 +20,11 @@ export default function ContactSection() {
                         <br />
                         Freelance Web App developer
                         <br />
-                        Senior Lecturer at{" "}
-                        <a href="https://www.baaa.dk/" rel="noreferrer" target="_blank">
-                            Business Academy Aarhus
+                    </p>
+                    <p>
+                        Senior Lecturer at <br />
+                        <a href="https://www.kea.dk/" rel="noreferrer" target="_blank">
+                            KEA - Copenhagen School of Design and Technology
                         </a>
                     </p>
                     <p>
