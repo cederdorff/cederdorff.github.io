@@ -16,6 +16,13 @@ export default function SocialIcons() {
                 <i className="ion-social-linkedin"></i>
             </a>
             <a
+                href="https://github.com/cederdorff"
+                rel="noreferrer"
+                target="_blank"
+                title="This is a link to my GitHub Account, Cederdorff">
+                <i className="ion-social-github"></i>
+            </a>
+            <a
                 href="https://www.facebook.com/cederdorff/"
                 rel="noreferrer"
                 target="_blank"
