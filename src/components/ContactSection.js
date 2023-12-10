@@ -23,8 +23,8 @@ export default function ContactSection() {
                     </p>
                     <p>
                         Senior Lecturer at <br />
-                        <a href="https://www.kea.dk/" rel="noreferrer" target="_blank">
-                            KEA - Copenhagen School of Design and Technology
+                        <a href="https://eaaa.dk/" rel="noreferrer" target="_blank">
+                            EAAA - Business Academy Aarhus
                         </a>
                     </p>
                     <p>
