@@ -12,10 +12,9 @@ export default function Header() {
                             "Rasmus Cederdorff.",
                             "a Freelancer.",
                             "a Senior Lecturer.",
-                            "a Web Developer.",
-                            "an App Developer.",
-                            "a Web Architect.",
-                            "a Teacher."
+                            "a Web App Developer.",
+                            "a Teacher.",
+                            "a Dad."
                         ]}
                     />
                 </h1>
