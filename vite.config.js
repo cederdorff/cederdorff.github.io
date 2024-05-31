@@ -8,9 +8,9 @@ export default defineConfig(({ command }) => {
     base: "/"
   };
 
-  if (command !== "serve") {
-    config.base = "/cederdorff.github.io-v2/";
-  }
+  // if (command !== "serve") {
+  //   config.base = "/cederdorff.github.io/";
+  // }
 
   return config;
 });
