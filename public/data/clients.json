@@ -9,7 +9,7 @@
   },
   {
     "id": "1",
-    "name": "BOUMATIC A/S & BOUTIME APP",
+    "name": "BouMatic A/S & BouTime App",
     "subtitle": "WEBSITE + WEB APP + MOBILE APP",
     "body": "BouMatic A/S is an international company that delivers dairy solutions. I have designed and implemented their WordPress Website and an intranet app for web and mobile called BouTime. The BouTime App is developed with JavaScript and the Ionic Framework.",
     "links": [{ "url": "https://boumatic.dk", "text": "Go to website" }],
@@ -17,7 +17,7 @@
   },
   {
     "id": "2",
-    "name": "CAFÉ SIDEWALK",
+    "name": "Café Sidewalk",
     "subtitle": "Website",
     "body": "Probably the Coziest Café with the best location in Aarhus. The website is implemented with WordPress and customisations in a child theme.",
     "links": [{ "url": "https://sidewalk.dk/", "text": "Go to website" }],
