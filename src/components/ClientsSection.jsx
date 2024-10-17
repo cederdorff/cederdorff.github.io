@@ -1,10 +1,10 @@
 import ClientRow from "./ClientRow";
 import { useEffect, useState } from "react";
-import "./../assets/clients.json";
+import data from "./../assets/clients.json";
 
 export default function ClientsSection() {
   const [clients, setClients] = useState([]);
-  console.log(clients);
+  console.log(data);
 
   useEffect(() => {
     async function getData() {
