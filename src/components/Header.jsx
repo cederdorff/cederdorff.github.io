@@ -14,8 +14,7 @@ export default function Header() {
               "a Senior Lecturer.",
               "a Web App Developer.",
               "a Teacher.",
-              "a Dad.",
-              "a Son."
+              "a Dad."
             ]}
           />
         </h1>
