@@ -1,24 +1,12 @@
-import BannerImage from "./components/BannerImage";
-import CVHero from "./components/CVHero";
-import ClientsSection from "./components/ClientsSection";
-import ContactSection from "./components/ContactSection";
-import Expertise from "./components/Expertise";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import ScrollToTopBtn from "./components/ScollToTopBtn";
+import { Route, Routes } from "react-router";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Expertise />
-      <ClientsSection />
-      <CVHero />
-      <BannerImage />
-      <ContactSection />
-      <Footer />
-      <ScrollToTopBtn />
-    </>
+    <Routes>
+      {/* Routes go here */}
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 }
 
