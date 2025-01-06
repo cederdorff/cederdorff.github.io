@@ -596,6 +596,7 @@ footer .logo {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
 }
 
 .link-tree h1 {
@@ -608,4 +609,8 @@ footer .logo {
   border-radius: 50%;
   border: var(--light-green) 4px solid;
   object-fit: cover;
+}
+.link-tree .list-social i {
+  color: var(--light-grey);
+  font-size: 40px;
 }

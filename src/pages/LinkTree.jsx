@@ -6,6 +6,10 @@ export default function LinkTree() {
       <figure>
         <img src="img/race.webp" alt="Rasmus Cederdorff" />
       </figure>
+      <h1>Rasmus Cederdorff</h1>
+      <p>Web App Developer | Senior Lecturer</p>
+
+      <p></p>
       <SocialIcons />
     </section>
   );
