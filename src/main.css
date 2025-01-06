@@ -585,3 +585,27 @@ footer .logo {
   width: 275px;
   padding: 3em 0;
 }
+
+/* ========== LINK TREE STYLING ========== */
+.link-tree {
+  background: var(--green);
+  color: var(--text-color-light);
+  height: 100vh;
+  /* center everything inside this */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-tree h1 {
+  color: var(--text-color-light);
+}
+
+.link-tree img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: var(--light-green) 4px solid;
+  object-fit: cover;
+}
