@@ -1,16 +1,15 @@
-import SocialIcons from "../components/SocialIcons";
+import LinkTree from "../components/LinkTree";
 
-export default function LinkTree() {
+export default function Links() {
   return (
-    <section className="link-tree">
+    <section className="links">
       <figure>
         <img src="img/race.webp" alt="Rasmus Cederdorff" />
       </figure>
       <h1>Rasmus Cederdorff</h1>
       <p>Web App Developer | Senior Lecturer</p>
 
-      <p></p>
-      <SocialIcons />
+      <LinkTree />
     </section>
   );
 }

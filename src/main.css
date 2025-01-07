@@ -587,7 +587,7 @@ footer .logo {
 }
 
 /* ========== LINK TREE STYLING ========== */
-.link-tree {
+.links {
   background: var(--green);
   color: var(--text-color-light);
   height: 100vh;
@@ -599,18 +599,37 @@ footer .logo {
   text-transform: uppercase;
 }
 
-.link-tree h1 {
+.links h1 {
   color: var(--text-color-light);
 }
 
-.link-tree img {
+.links img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   border: var(--light-green) 4px solid;
   object-fit: cover;
 }
-.link-tree .list-social i {
-  color: var(--light-grey);
-  font-size: 40px;
+
+.link-tree {
+  width: 345px;
+  max-width: 100%;
+}
+
+.link-tree a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-green);
+  color: var(--green);
+  padding: 0.5em 0 0.35em;
+  border-radius: 10px;
+  margin: 0.5em auto;
+  text-align: center;
+  text-transform: initial;
+}
+
+.link-tree i {
+  margin: 0 0.5em 0 0;
+  font-size: 2em;
 }
