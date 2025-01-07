@@ -599,8 +599,8 @@ footer .logo {
   text-transform: uppercase;
 }
 
-.links h1 {
-  color: var(--text-color-light);
+.links figure {
+  margin: 0;
 }
 
 .links img {
@@ -609,6 +609,14 @@ footer .logo {
   border-radius: 50%;
   border: var(--light-green) 4px solid;
   object-fit: cover;
+}
+
+.links h1 {
+  color: var(--text-color-light);
+}
+
+.links p {
+  margin: 0.3em 0;
 }
 
 .link-tree {
@@ -622,7 +630,7 @@ footer .logo {
   justify-content: center;
   background-color: var(--light-green);
   color: var(--green);
-  padding: 0.5em 0 0.35em;
+  padding: 0.4em 0 0.35em;
   border-radius: 10px;
   margin: 0.5em auto;
   text-align: center;
