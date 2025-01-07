@@ -35,6 +35,12 @@ export default function LinkTree() {
         <i className="ion-social-facebook"></i>
         Facebook
       </a>
+      <a
+        href="https://www.eaaa.dk/"
+        title="This is a link to Erhvervsakademi Aarhus, EAAA">
+        <i className="ion-ios-people"></i>
+        Business Academy Aarhus
+      </a>
     </article>
   );
 }
