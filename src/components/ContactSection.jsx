@@ -16,9 +16,9 @@ export default function ContactSection() {
 
         <address>
           <p>
-            Rasmus Cederdorff
+            <strong>Rasmus Cederdorff</strong>
             <br />
-            Freelance Web App developer
+            Web App developer
             <br />
           </p>
           <p>
@@ -38,7 +38,7 @@ export default function ContactSection() {
         </address>
       </article>
       <figure>
-        <img src="img/rasmus_new.webp" alt="Rasmus Cederdorff" />
+        <img src="img/race_2024.webp" alt="Rasmus Cederdorff" />
       </figure>
     </section>
   );

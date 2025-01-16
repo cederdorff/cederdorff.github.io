@@ -537,10 +537,11 @@ img {
 }
 
 #contact img {
-  width: 100%;
-  max-width: 300px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-  margin: auto;
+  border: var(--light-green) 4px solid;
+  object-fit: cover;
 }
 
 #contact h2 {
