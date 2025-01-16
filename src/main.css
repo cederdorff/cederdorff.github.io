@@ -600,6 +600,7 @@ footer .logo {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  padding: 1em 0;
 }
 
 .links figure {
