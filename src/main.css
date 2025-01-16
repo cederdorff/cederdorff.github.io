@@ -98,7 +98,7 @@ a {
 }
 
 a:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .list-social span {
@@ -588,7 +588,9 @@ footer .logo {
 
 /* ========== LINK TREE STYLING ========== */
 .links {
-  background: var(--green);
+  background-image: url("img/banner_web.webp");
+  background-size: cover;
+  background-position: center;
   color: var(--text-color-light);
   height: 100vh;
   /* center everything inside this */
@@ -611,12 +613,9 @@ footer .logo {
   object-fit: cover;
 }
 
-.links h1 {
-  color: var(--text-color-light);
-}
-
 .links p {
   margin: 0.3em 0;
+  font-size: 0.9em;
 }
 
 .link-tree {
@@ -628,8 +627,8 @@ footer .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--light-green);
-  color: var(--green);
+  background-color: var(--green);
+  color: var(--text-color-light);
   padding: 0.4em 0 0.35em;
   border-radius: 10px;
   margin: 0.5em auto;
@@ -640,4 +639,13 @@ footer .logo {
 .link-tree i {
   margin: 0 0.5em 0 0;
   font-size: 2em;
+}
+
+.links header {
+  background-color: var(--light-green);
+  padding: 0.5em;
+  width: 100%;
+  text-align: center;
+  margin: 1em;
+  color: var(--green);
 }
