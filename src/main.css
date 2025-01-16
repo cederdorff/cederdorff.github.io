@@ -589,7 +589,7 @@ footer .logo {
 
 /* ========== LINK TREE STYLING ========== */
 .links {
-  background-image: url("img/banner_web.webp");
+  background-image: url("../img/banner_web.webp");
   background-size: cover;
   background-position: center;
   color: var(--text-color-light);

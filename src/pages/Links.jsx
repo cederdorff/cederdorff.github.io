@@ -4,7 +4,7 @@ export default function Links() {
   return (
     <section className="links">
       <figure>
-        <img src="../img/race_2024.webp" alt="Rasmus Cederdorff" />
+        <img src="img/race_2024.webp" alt="Rasmus Cederdorff" />
       </figure>
       <header>
         <h1>Rasmus Cederdorff</h1>
