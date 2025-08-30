@@ -10,10 +10,8 @@ export default function Header() {
             initialText="I'm"
             animatedTextArray={[
               "Rasmus Cederdorff.",
-              "a Freelancer.",
               "a Senior Lecturer.",
               "a Web App Developer.",
-              "a Teacher.",
               "a Dad."
             ]}
           />
