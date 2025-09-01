@@ -16,7 +16,7 @@ export default function CVHero() {
         </h2>
         <p>
           Download my{" "}
-          <a href="/CV-2024.pdf" rel="noreferrer" target="_blank">
+          <a href="/cv-2025.pdf" rel="noreferrer" target="_blank">
             curriculum vitae here
           </a>
           ,<br /> visit my{" "}
