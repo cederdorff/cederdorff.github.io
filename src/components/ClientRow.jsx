@@ -7,11 +7,7 @@ export default function ClientRow({ client }) {
         <p>{client.body}</p>
         <section className="client-links">
           {client.links.map((link, index) => (
-            <a
-              key={`${client.id}-${index}`}
-              href={link.url}
-              rel="noreferrer"
-              target="_blank">
+            <a key={`${client.id}-${index}`} href={link.url} rel="noreferrer" target="_blank">
               {link.text} <i className="ion-ios-arrow-forward"></i>
               <i className="ion-ios-arrow-forward"></i>{" "}
             </a>
@@ -19,7 +15,7 @@ export default function ClientRow({ client }) {
         </section>
       </article>
       <figure>
-        <img src={client.image} alt="House of Vincent" />
+        <img src={client.image} alt={`Image of my client: ${client.name}`} />
       </figure>
     </section>
   );

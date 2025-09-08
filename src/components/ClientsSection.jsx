@@ -12,6 +12,7 @@ export default function ClientsSection() {
     }
     getData();
   }, []);
+
   return (
     <section id="clients">
       <div className="headline-container">

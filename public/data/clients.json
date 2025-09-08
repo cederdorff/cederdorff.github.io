@@ -13,7 +13,7 @@
     "subtitle": "WEBSITE + WEB APP + MOBILE APP",
     "body": "BouMatic A/S is an international company that delivers dairy solutions. I have designed and implemented their WordPress Website and an intranet app for web and mobile called BouTime. The BouTime App is developed with JavaScript and the Ionic Framework.",
     "links": [{ "url": "https://boumatic.dk", "text": "Go to website" }],
-    "image": "https://cederdorff.com/img/boutime_web.webp"
+    "image": "img/boutime_web.webp"
   },
   {
     "id": "2",
@@ -21,7 +21,7 @@
     "subtitle": "Website",
     "body": "Probably the Coziest Café with the best location in Aarhus. The website is implemented with WordPress and customisations in a child theme.",
     "links": [{ "url": "https://sidewalk.dk/", "text": "Go to website" }],
-    "image": "https://cederdorff.com/img/sidewalk.webp"
+    "image": "img/sidewalk.webp"
   },
   {
     "id": "3",
@@ -29,7 +29,7 @@
     "subtitle": "Mobile App",
     "body": "theBIGfridge is a mobile app for iOS, developed with the Ionic Framework. The main focus of the theBIGfridge is to minimise the waste of food. The app is available for iPhone.",
     "links": [{ "url": "https://apps.apple.com/dk/app/thebigfridge/id1471370471", "text": "View in App Store" }],
-    "image": "https://cederdorff.com/img/thebigfridge_web.webp"
+    "image": "img/thebigfridge_web.webp"
   },
 
   {
