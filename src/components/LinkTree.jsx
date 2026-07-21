@@ -1,9 +1,9 @@
 export default function LinkTree() {
   return (
     <article className="link-tree">
-      <a href="https://houseofvincent.com/" title="This is a link to House of Vincent">
+      <a href="https://cederdorff.com/#work" title="See selected work">
         <i className="ion-ios-bolt"></i>
-        House of Vincent
+        Selected work
       </a>
       <a
         href="https://cederdorff.com/"

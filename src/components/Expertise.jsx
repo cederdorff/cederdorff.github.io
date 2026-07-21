@@ -24,7 +24,7 @@ export default function Expertise() {
         <article>
           <h3>Webshop</h3>
           <p>
-            Are you ready to start selling on the web? Let's develop a
+            Are you ready to start selling on the web? Let&apos;s develop a
             customized shop solution with Shopify or WooCommerce and the most
             popular Content Management System in the world, WordPress.
           </p>
