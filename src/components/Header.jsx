@@ -16,7 +16,7 @@ export default function Header() {
             ]}
           />
         </h1>
-        <p>Web App Developer | Senior Lecturer</p>
+        <p>Senior Lecturer | Web App Developer</p>
         <SocialIcons />
       </article>
     </header>

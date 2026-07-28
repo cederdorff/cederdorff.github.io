@@ -18,7 +18,7 @@ export default function ContactSection() {
           <p>
             <strong>Rasmus Cederdorff</strong>
             <br />
-            Web App developer
+            Web App Developer
             <br />
           </p>
           <p>

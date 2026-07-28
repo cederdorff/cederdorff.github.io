@@ -1,15 +1,17 @@
+import { useEffect, useState } from "react";
+
 const projects = [
   {
     title: "Vestjydske Kunstnere",
-    type: "Art association · Website",
-    role: "Concept, design & development",
+    type: "Artist association · React platform",
+    role: "UX/UI, React development & deployment",
     description:
-      "A new digital home for a West Jutland artists’ association — bringing its artists, work and exhibitions together in one clear, contemporary space.",
-    image: "/img/projects/vestjydske-kunstnere.webp",
+      "A complete modernization of the association’s former website, built with React and React Router and deployed via GitHub Pages. The challenge was to give many different artists an equal, consistent framework while keeping the art in focus, supported by clear navigation and an optimized WebP image workflow.",
+    image: "/img/projects/vestjydske-kunstnere-browser.webp",
     url: "https://vestjydskekunstnere.dk/",
     imagePosition: "center",
     imageFit: "contain",
-    imageClass: "project-image--art"
+    figureClass: "project-figure--browser"
   },
   {
     title: "Paul M. Cederdorff",
@@ -17,10 +19,11 @@ const projects = [
     role: "Research, storytelling, design & development",
     description:
       "A living memorial and archive built around a life in art, teaching and culture. A deeply personal project shaped through stories, artworks and family material.",
-    image: "/img/projects/paul-cederdorff.jpg",
+    image: "/img/projects/paul-cederdorff-browser.webp",
     url: "https://cederdorff.dk/",
-    imagePosition: "center 42%",
-    imageFit: "cover"
+    imagePosition: "center",
+    imageFit: "contain",
+    figureClass: "project-figure--browser"
   },
   {
     title: "Spangsgaard",
@@ -28,10 +31,23 @@ const projects = [
     role: "Design & development",
     description:
       "A quiet, image-led website for a bed & breakfast near Odense — designed to let the place, atmosphere and personal hospitality speak for themselves.",
-    image: "/img/projects/spangsgaard.webp",
+    image: "/img/projects/spangsgaard-browser.webp",
     url: "https://spangsgaard.com/",
     imagePosition: "center",
-    imageFit: "cover"
+    imageFit: "contain",
+    figureClass: "project-figure--browser"
+  },
+  {
+    title: "Karolines Hus",
+    type: "Gallery · React platform",
+    role: "UX/UI, React development & modernization",
+    description:
+      "A modern rebuild of the gallery’s website on Fur, created with React, Vite and React Router. Exhibitions, artists and practical information are brought into a clear structure, with dedicated artist pages, optimized WebP imagery and a focus on performance.",
+    image: "/img/projects/karolines-hus-browser.webp",
+    url: "https://karolineshus.dk/",
+    imagePosition: "center",
+    imageFit: "contain",
+    figureClass: "project-figure--browser"
   }
 ];
 
@@ -42,15 +58,53 @@ const archive = [
     url: "https://houseofvincent.com/"
   },
   {
-    name: "BouMatic / BouTime",
-    detail: "Website, web app & mobile app",
+    name: "BouMatic",
+    detail: "Website",
     url: "https://boumatic.dk/"
   },
-  { name: "Café Sidewalk", detail: "Website", url: "https://sidewalk.dk/" },
+  { name: "Café Sidewalk", detail: "Website", url: "https://sidewalk.dk/" }
+];
+
+const teachingResources = [
   {
-    name: "Karolines Hus",
-    detail: "Gallery website",
-    url: "https://karolineshus.dk/"
+    name: "Portfolio on GitHub Pages",
+    detail: "React template, routing & deployment",
+    url: "https://github.com/cederdorff/username.github.io"
+  },
+  {
+    name: "Post App + Supabase",
+    detail: "React CRUD, routing & backend",
+    url: "https://github.com/cederdorff/post-app-supabase"
+  },
+  {
+    name: "Codeagram",
+    detail: "Components, state & events in React",
+    url: "https://github.com/cederdorff/codeagram"
+  },
+  {
+    name: "JavaScript Movie App",
+    detail: "DOM, data, fetch & interaction",
+    url: "https://github.com/cederdorff/js-movie-app"
+  },
+  {
+    name: "React Products",
+    detail: "A practical React product exercise",
+    url: "https://github.com/cederdorff/react-products"
+  },
+  {
+    name: "Figma to React",
+    detail: "Design-to-code lessons & course material",
+    url: "https://github.com/cederdorff/figma-to-react"
+  },
+  {
+    name: "Webcam-controlled game",
+    detail: "React, TensorFlow.js & browser interaction",
+    url: "https://github.com/cederdorff/webcam-controlled-game"
+  },
+  {
+    name: "Dandelion Field",
+    detail: "Hand tracking & creative coding in React",
+    url: "https://github.com/cederdorff/dandelion-experiment"
   }
 ];
 
@@ -59,6 +113,33 @@ function Arrow() {
 }
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const updateActiveSection = () => {
+      const readingLine = window.scrollY + window.innerHeight * 0.36;
+      let currentSection = "";
+
+      for (const sectionId of ["about", "work", "contact"]) {
+        const section = document.getElementById(sectionId);
+        if (section && section.offsetTop <= readingLine) {
+          currentSection = sectionId;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, []);
+
   return (
     <main>
       <nav className="site-nav" aria-label="Main navigation">
@@ -69,15 +150,33 @@ export default function Home() {
           <span>Cederdorff</span>
         </a>
         <div className="nav-links">
-          <a href="#who-i-am">About</a>
-          <a href="#work">Work</a>
-          <a href="#contact">Contact</a>
+          <a
+            href="#about"
+            className={activeSection === "about" ? "is-active" : undefined}
+            aria-current={activeSection === "about" ? "location" : undefined}
+          >
+            About
+          </a>
+          <a
+            href="#work"
+            className={activeSection === "work" ? "is-active" : undefined}
+            aria-current={activeSection === "work" ? "location" : undefined}
+          >
+            Work
+          </a>
+          <a
+            href="#contact"
+            className={activeSection === "contact" ? "is-active" : undefined}
+            aria-current={activeSection === "contact" ? "location" : undefined}
+          >
+            Contact
+          </a>
         </div>
       </nav>
 
       <header className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">Senior Lecturer · Developer · Aarhus</p>
+          <p className="eyebrow">Senior Lecturer · Web App Developer · Holstebro</p>
           <h1>
             Rasmus
             <br />
@@ -92,18 +191,14 @@ export default function Home() {
         </div>
         <figure className="hero-portrait">
           <img src="/img/new/race_2024.jpg" alt="Portrait of Rasmus Cederdorff in a yellow shirt" />
-          <figcaption>
-            <span>Developer</span>
-            <span>Senior Lecturer</span>
-            <span>Maker</span>
-          </figcaption>
         </figure>
       </header>
 
-      <section className="statement" id="about" aria-labelledby="about-heading">
+      <div className="chapter" id="about">
+      <section className="statement" aria-labelledby="about-heading">
         <p className="section-label">01 / About</p>
         <div className="statement-body">
-          <h2 id="about-heading">I teach people how to make digital products — and still make them myself.</h2>
+          <h2 id="about-heading">Digital things are best made with people in mind.</h2>
           <div className="statement-details">
             <p className="statement-copy">
               I’m a senior lecturer at Business Academy Aarhus and a JavaScript developer with an eye for UI and UX.
@@ -113,7 +208,7 @@ export default function Home() {
             <dl className="about-facts">
               <div>
                 <dt>Based in</dt>
-                <dd>Aarhus, Denmark</dd>
+                <dd>Holstebro, Denmark</dd>
               </div>
               <div>
                 <dt>At work</dt>
@@ -121,56 +216,29 @@ export default function Home() {
               </div>
               <div>
                 <dt>Focus</dt>
-                <dd>JavaScript, UI, UX & learning</dd>
+                <dd>JavaScript, web development & learning</dd>
               </div>
             </dl>
           </div>
         </div>
       </section>
 
-      <section className="practice-section" aria-labelledby="practice-heading">
-        <div className="practice-heading">
-          <p className="section-label">What I spend my time on</p>
-          <h2 id="practice-heading">Teaching keeps me sharp. Making keeps me curious.</h2>
-        </div>
-        <div className="practice">
-          <article>
-            <p className="practice-number">01</p>
-            <h3>Teaching</h3>
-            <p>Frontend development, JavaScript, React, UI, UX, design thinking and mobile app development.</p>
-          </article>
-          <article>
-            <p className="practice-number">02</p>
-            <h3>Building</h3>
-            <p>Useful, accessible websites and digital experiences — from the first sketch to the finished product.</p>
-          </article>
-          <article>
-            <p className="practice-number">03</p>
-            <h3>Exploring</h3>
-            <p>New tools, creative code and small experiments that keep me learning, questioning and making.</p>
-          </article>
-        </div>
-      </section>
-
-      <section className="personal-note" id="who-i-am" aria-labelledby="who-i-am-heading">
+      <section className="personal-note" aria-labelledby="who-i-am-heading">
         <figure>
           <img src="/img/new/race.jpg" alt="Black and white portrait of Rasmus Cederdorff" />
         </figure>
         <div>
-          <p className="section-label">02 / Who I am</p>
-          <h2 id="who-i-am-heading">A teacher, developer, dad and incurably curious maker.</h2>
+          <p className="section-label">Who I am</p>
+          <h2 id="who-i-am-heading">Husband, dad and always making something.</h2>
           <div className="personal-copy">
             <p>
-              I’m Rasmus. I care about clear ideas, thoughtful details and creating spaces where people feel comfortable
-              learning, asking questions and trying things out.
+              I’m Rasmus. I care about clear ideas, thoughtful details and creating space for people to learn, ask
+              questions and try things out.
             </p>
             <p>
-              Technology is my material, but people are the point. That is true when I’m teaching a class, shaping an
-              interface or building a small project for someone I care about.
-            </p>
-            <p>
-              Outside work, I’m a dad and a curious human. Instagram is where I share glimpses of everyday life, family,
-              colour and whatever currently has my attention.
+              Outside work, I’m a husband and dad. At home, there is always another renovation or interior project
+              underway, and that passion even took us onto the Danish TV programme Nybyggerne. Instagram is where I share
+              glimpses of it all.
             </p>
           </div>
           <div className="personal-links">
@@ -184,10 +252,47 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="work" id="work" aria-labelledby="work-heading">
+      <section className="practice-section" aria-labelledby="practice-heading">
+        <p className="section-label">How I work</p>
+        <div className="practice-body">
+          <h2 id="practice-heading">Teaching, building and staying curious.</h2>
+          <div className="practice-copy">
+            <p>
+              Most of my time is spent teaching web development and JavaScript at Business Academy Aarhus. Serving as
+              an external examiner across Denmark keeps me inspired, up to date and often reassured that we are on the
+              right track.
+            </p>
+            <p>Alongside that, I build selected web projects and keep experimenting with new tools and ideas.</p>
+          </div>
+          <ul className="practice-list" aria-label="What my work consists of">
+            <li>
+              <span>01</span>
+              Web development & JavaScript
+            </li>
+            <li>
+              <span>02</span>
+              Selected digital projects
+            </li>
+            <li>
+              <span>03</span>
+              Tools, ideas & experiments
+            </li>
+          </ul>
+        </div>
+      </section>
+      <figure className="work-banner">
+        <img
+          src="/img/banner_web.webp"
+          alt="A desk with a laptop, ruler, coffee and scattered letterforms"
+        />
+      </figure>
+      </div>
+
+      <div className="chapter" id="work">
+      <section className="work" aria-labelledby="work-heading">
         <div className="section-heading">
-          <p className="section-label">03 / Selected work</p>
-          <h2 id="work-heading">Recently made</h2>
+          <p className="section-label">02 / Selected work</p>
+          <h2 id="work-heading">Recent work</h2>
         </div>
 
         <div className="project-list">
@@ -200,7 +305,7 @@ export default function Home() {
               key={project.title}
               aria-label={`Visit ${project.title}`}
             >
-              <figure>
+              <figure className={project.figureClass}>
                 <img
                   src={project.image}
                   alt=""
@@ -227,24 +332,87 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="archive" aria-labelledby="archive-heading">
-        <div className="archive-intro">
-          <p className="section-label">04 / Earlier work</p>
-          <h2 id="archive-heading">A few more things I’ve helped bring to life.</h2>
+      <section className="teaching-work" aria-labelledby="teaching-work-heading">
+        <div className="teaching-intro">
+          <p className="section-label">Teaching in practice</p>
+          <h2 id="teaching-work-heading">What I teach also lives in code.</h2>
+          <p>
+            I build exercises, starter projects and small experiments that give students something concrete to
+            explore, break and rebuild. Much of it is shared openly on GitHub.
+          </p>
         </div>
-        <div className="archive-list">
-          {archive.map((item) => (
-            <a href={item.url} target="_blank" rel="noreferrer" key={item.name}>
-              <span>{item.name}</span>
-              <span>{item.detail}</span>
+        <div className="teaching-list">
+          {teachingResources.map((resource) => (
+            <a href={resource.url} target="_blank" rel="noreferrer" key={resource.name}>
+              <span>{resource.name}</span>
+              <span>{resource.detail}</span>
               <Arrow />
             </a>
           ))}
+          <a
+            className="teaching-all"
+            href="https://github.com/cederdorff?tab=repositories"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>More on GitHub</span>
+            <span>Browse all repositories</span>
+            <Arrow />
+          </a>
         </div>
       </section>
 
+      <section className="archive" aria-labelledby="archive-heading">
+        <div className="archive-intro">
+          <p className="section-label">Earlier work</p>
+          <h2 id="archive-heading">A few more things I’ve helped bring to life.</h2>
+        </div>
+        <div className="archive-content">
+          <div className="archive-features">
+            <article className="archive-feature">
+              <figure>
+                <img src="/img/thebigfridge_web.webp" alt="The BIG Fridge logo" />
+              </figure>
+              <div>
+                <p className="project-role">Food sharing · Mobile app</p>
+                <h3>theBIGfridge</h3>
+                <p>
+                  A mobile app created to reduce food waste by making it easier for people to share surplus food
+                  locally. I worked across product design and development, building the app with Ionic, Angular,
+                  JavaScript and Firebase.
+                </p>
+              </div>
+            </article>
+            <article className="archive-feature archive-feature--boutime">
+              <figure>
+                <img src="/img/boutime_web.webp" alt="BouTime displayed on a tablet" />
+              </figure>
+              <div>
+                <p className="project-role">Work management · Web & mobile app</p>
+                <h3>BouTime</h3>
+                <p>
+                  A shared tool for BouMatic employees covering time registration, absence, calendars and contacts. I
+                  designed and developed the original web and mobile app, and recently upgraded it with React Router
+                  7, TypeScript and Tailwind CSS.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div className="archive-list">
+            {archive.map((item) => (
+              <a href={item.url} target="_blank" rel="noreferrer" key={item.name}>
+                <span>{item.name}</span>
+                <span>{item.detail}</span>
+                <Arrow />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+      </div>
+
       <section className="contact" id="contact" aria-labelledby="contact-heading">
-        <p className="section-label">05 / Contact</p>
+        <p className="section-label">03 / Contact</p>
         <h2 id="contact-heading">
           Let’s keep in
           <br />
@@ -270,10 +438,13 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="footer-logo" href="#top" aria-label="Rasmus Cederdorff, home">
-          <img src="/img/logo_inverted.webp" alt="Cederdorff" />
+        <a className="brand-lockup footer-brand" href="#top" aria-label="Rasmus Cederdorff, home">
+          <span className="wordmark">
+            <img src="/img/logo192.webp" alt="" />
+          </span>
+          <span>Cederdorff</span>
         </a>
-        <p>Teaching, building & exploring · Aarhus</p>
+        <p>Holstebro, Denmark</p>
         <a href="#top">Back to top ↑</a>
       </footer>
     </main>

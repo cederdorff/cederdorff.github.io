@@ -1,11 +1,12 @@
 export default function Footer() {
   return (
     <footer>
-      <img
-        className="logo"
-        src="img/logo_inverted.webp"
-        alt="Cederdorff logo"
-      />
+      <a className="brand-lockup footer-brand" href="/" aria-label="Rasmus Cederdorff, home">
+        <span className="wordmark">
+          <img src="/img/logo192.webp" alt="" />
+        </span>
+        <span>Cederdorff</span>
+      </a>
     </footer>
   );
 }
