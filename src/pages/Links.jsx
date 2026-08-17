@@ -1,14 +1,10 @@
-import LinkTree from "../components/LinkTree";
+import LinkTree from "../components/links/LinkTree";
+import BrandLockup from "../components/ui/BrandLockup";
 
 export default function Links() {
   return (
     <main className="links">
-      <a className="brand-lockup links-brand" href="/" aria-label="Go to Rasmus Cederdorff's website">
-        <span className="wordmark">
-          <img src="/img/logo192.webp" alt="" />
-        </span>
-        <span>Cederdorff</span>
-      </a>
+      <BrandLockup className="links-brand" href="/" label="Go to Rasmus Cederdorff's website" />
       <figure>
         <img src="/img/new/race.webp" alt="Rasmus Cederdorff" />
       </figure>

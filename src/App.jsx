@@ -5,7 +5,6 @@ import Links from "./pages/Links";
 function App() {
   return (
     <Routes>
-      {/* Routes go here */}
       <Route path="/" element={<Home />} />
       <Route path="/links" element={<Links />} />
     </Routes>

@@ -1,8 +1,22 @@
-# React + Vite
+# Cederdorff.com
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for Rasmus Cederdorff, built with React and Vite and deployed to GitHub Pages.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
+
+Use `npm run lint` to check the source and `npm run build` to create a production build.
+
+## Structure
+
+- `src/components/home` contains the sections used on the portfolio page.
+- `src/components/layout` contains shared navigation and footer components.
+- `src/components/links` contains the `/links` page content.
+- `src/components/ui` contains small reusable interface elements.
+- `src/data` contains project and resource data.
+- `src/hooks` contains shared React behavior.
+- `public` contains only assets copied directly into the production build.
