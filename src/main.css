@@ -310,8 +310,6 @@ figcaption {
   grid-template-columns: 1fr 2.25fr;
   gap: clamp(40px, 7vw, 120px);
   padding: clamp(64px, 8vw, 110px) clamp(24px, 6vw, 96px);
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
 }
 
 .practice-body {
