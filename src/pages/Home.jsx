@@ -141,7 +141,11 @@ export default function Home() {
   }, []);
 
   return (
-    <main>
+    <>
+    <a className="skip-link" href="#main-content">
+      Skip to main content
+    </a>
+    <main id="main-content" tabIndex="-1">
       <nav className="site-nav" aria-label="Main navigation">
         <a className="brand-lockup" href="#top" aria-label="Rasmus Cederdorff, home">
           <span className="wordmark">
@@ -438,5 +442,6 @@ export default function Home() {
         <a href="#top">Back to top ↑</a>
       </footer>
     </main>
+    </>
   );
 }

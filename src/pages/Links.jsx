@@ -2,7 +2,7 @@ import LinkTree from "../components/LinkTree";
 
 export default function Links() {
   return (
-    <section className="links">
+    <main className="links">
       <a className="brand-lockup links-brand" href="/" aria-label="Go to Rasmus Cederdorff's website">
         <span className="wordmark">
           <img src="/img/logo192.webp" alt="" />
@@ -18,6 +18,6 @@ export default function Links() {
       </header>
 
       <LinkTree />
-    </section>
+    </main>
   );
 }

@@ -50,6 +50,26 @@ a {
   text-decoration: none;
 }
 
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 12px 16px;
+  color: var(--ink);
+  background: var(--yellow);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
 img {
   display: block;
   width: 100%;
@@ -168,7 +188,7 @@ footer a {
 .text-link:hover,
 .contact-links a:hover,
 footer a:hover {
-  opacity: 0.58;
+  opacity: 0.85;
 }
 
 .hero {
@@ -191,7 +211,7 @@ footer a:hover {
 .project-meta,
 .practice-number,
 figcaption {
-  font-size: 0.7rem;
+  font-size: 0.74rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -364,7 +384,7 @@ figcaption {
 }
 
 .work {
-  padding: clamp(100px, 14vw, 210px) clamp(20px, 4vw, 64px);
+  padding: clamp(100px, 14vw, 210px) 0 0;
   color: var(--white);
   background: var(--green);
 }
@@ -374,22 +394,42 @@ figcaption {
   grid-template-columns: 1fr 2.25fr;
   gap: clamp(40px, 7vw, 120px);
   margin-bottom: clamp(70px, 10vw, 140px);
+  padding: 0 clamp(20px, 4vw, 64px);
 }
 
 .project-list {
   display: grid;
-  gap: clamp(90px, 12vw, 170px);
 }
 
 .project {
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.75fr);
   gap: clamp(30px, 5vw, 80px);
+  padding: clamp(70px, 9vw, 130px) clamp(20px, 4vw, 64px);
   color: var(--white);
+}
+
+.project:nth-child(odd) {
+  color: var(--ink);
+  background: var(--soft);
+}
+
+.project:nth-child(odd) .project-meta {
+  color: var(--green);
+  border-color: rgba(36, 56, 63, 0.38);
+}
+
+.project:nth-child(odd) .project-role {
+  color: var(--green);
+}
+
+.project:nth-child(odd) .project-copy > p:last-child {
+  color: #3b5159;
 }
 
 .project:nth-child(even) {
   grid-template-columns: minmax(300px, 0.75fr) minmax(0, 1.45fr);
+  background: var(--green);
 }
 
 .project:nth-child(even) figure {
@@ -402,10 +442,7 @@ figcaption {
   min-height: 460px;
   overflow: hidden;
   background: var(--soft);
-  transition:
-    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 350ms ease,
-    background-color 350ms ease;
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .project .project-figure--browser {
@@ -413,10 +450,10 @@ figcaption {
   height: auto;
   min-height: 0;
   max-height: none;
-  padding: clamp(16px, 2.2vw, 34px);
-  overflow: hidden;
+  padding: 0;
+  overflow: visible;
   aspect-ratio: auto;
-  background: var(--soft);
+  background: transparent;
   border: 0;
 }
 
@@ -432,9 +469,13 @@ figcaption {
 
 .project:hover figure,
 .project:focus-visible figure {
-  box-shadow: 0 24px 70px rgba(6, 15, 18, 0.34);
   transform: translateY(-3px);
-  background: #bdd1d3;
+}
+
+.project:hover .project-figure--browser,
+.project:focus-visible .project-figure--browser {
+  background: transparent;
+  box-shadow: none;
 }
 
 .project-copy {
@@ -467,7 +508,7 @@ figcaption {
 .project-role {
   margin-top: 24px;
   color: var(--yellow);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.12em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -546,6 +587,10 @@ figcaption {
   color: #5d5c56;
 }
 
+.archive-list span:nth-child(2) {
+  color: var(--green);
+}
+
 .teaching-list .teaching-all {
   padding-right: 20px;
   padding-left: 20px;
@@ -612,7 +657,7 @@ figcaption {
 
 .archive-feature .project-role {
   margin-top: 0;
-  color: #4c6a70;
+  color: var(--green);
 }
 
 .archive-feature h3 {
