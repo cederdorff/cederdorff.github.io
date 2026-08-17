@@ -10,7 +10,7 @@ export default function Links() {
         <span>Cederdorff</span>
       </a>
       <figure>
-        <img src="/img/new/race.jpg" alt="Rasmus Cederdorff" />
+        <img src="/img/new/race.webp" alt="Rasmus Cederdorff" />
       </figure>
       <header>
         <h1>Rasmus Cederdorff</h1>

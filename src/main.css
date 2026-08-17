@@ -248,7 +248,7 @@ figcaption {
   display: grid;
   grid-template-columns: 1fr 2.25fr;
   gap: clamp(40px, 7vw, 120px);
-  padding: clamp(90px, 13vw, 200px) clamp(24px, 6vw, 96px);
+  padding: clamp(88px, 11vw, 170px) clamp(24px, 6vw, 96px);
 }
 
 .section-label {
@@ -348,21 +348,13 @@ figcaption {
 }
 
 .practice-list li {
-  display: flex;
-  gap: 10px;
-  align-items: baseline;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.practice-list span {
-  color: #5e7076;
-  font-size: 0.65rem;
-}
-
 .work-banner {
-  height: clamp(280px, 36vw, 640px);
+  height: clamp(320px, 44vw, 760px);
   overflow: hidden;
   background: var(--soft);
 }
@@ -376,7 +368,7 @@ figcaption {
 .work {
   padding: clamp(100px, 14vw, 210px) clamp(20px, 4vw, 64px);
   color: var(--white);
-  background: var(--ink);
+  background: var(--green);
 }
 
 .section-heading {
@@ -666,7 +658,7 @@ figcaption {
 }
 
 .personal-note h2 {
-  margin-top: clamp(70px, 9vw, 130px);
+  margin-top: clamp(42px, 6vw, 80px);
   font-size: clamp(2.4rem, 4.5vw, 5rem);
   font-weight: 400;
   letter-spacing: -0.055em;
@@ -705,7 +697,7 @@ figcaption {
 
 .contact h2 {
   margin-top: clamp(50px, 8vw, 110px);
-  font-size: clamp(4.4rem, 11.8vw, 12.5rem);
+  font-size: clamp(4.4rem, 10.5vw, 11rem);
   font-weight: 400;
   letter-spacing: -0.075em;
   line-height: 0.77;
@@ -830,8 +822,8 @@ footer a {
   }
 
   .hero-portrait {
-    height: 72svh;
-    min-height: 520px;
+    height: 62svh;
+    min-height: 460px;
   }
 
   .statement,
@@ -951,9 +943,7 @@ footer a {
   }
 
   .work-banner {
-    height: 74vw;
-    min-height: 280px;
-    max-height: 440px;
+    height: clamp(260px, 64vw, 380px);
   }
 
   .contact h2 {

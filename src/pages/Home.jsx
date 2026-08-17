@@ -6,7 +6,7 @@ const projects = [
     type: "Artist association · React platform",
     role: "UX/UI, React development & deployment",
     description:
-      "A complete modernization of the association’s former website, built with React and React Router and deployed via GitHub Pages. The challenge was to give many different artists an equal, consistent framework while keeping the art in focus, supported by clear navigation and an optimized WebP image workflow.",
+      "I rebuilt the association’s former website with React and React Router. The main challenge was giving each artist the same framework without making their work feel the same. I also set up the navigation, GitHub Pages deployment and a WebP image workflow.",
     image: "/img/projects/vestjydske-kunstnere-browser.webp",
     url: "https://vestjydskekunstnere.dk/",
     imagePosition: "center",
@@ -18,7 +18,7 @@ const projects = [
     type: "Personal archive · Digital storytelling",
     role: "Research, storytelling, design & development",
     description:
-      "A living memorial and archive built around a life in art, teaching and culture. A deeply personal project shaped through stories, artworks and family material.",
+      "This personal archive brings together Paul M. Cederdorff’s art, stories and work as a teacher. I researched, designed and built it using artworks and material from the family archive.",
     image: "/img/projects/paul-cederdorff-browser.webp",
     url: "https://cederdorff.dk/",
     imagePosition: "center",
@@ -30,7 +30,7 @@ const projects = [
     type: "Hospitality · Website",
     role: "Design & development",
     description:
-      "A quiet, image-led website for a bed & breakfast near Odense — designed to let the place, atmosphere and personal hospitality speak for themselves.",
+      "For this bed & breakfast near Odense, I kept the interface quiet and let the photographs do most of the work. The site focuses on the place, the atmosphere and the practical details guests need.",
     image: "/img/projects/spangsgaard-browser.webp",
     url: "https://spangsgaard.com/",
     imagePosition: "center",
@@ -42,7 +42,7 @@ const projects = [
     type: "Gallery · React platform",
     role: "UX/UI, React development & modernization",
     description:
-      "A modern rebuild of the gallery’s website on Fur, created with React, Vite and React Router. Exhibitions, artists and practical information are brought into a clear structure, with dedicated artist pages, optimized WebP imagery and a focus on performance.",
+      "I rebuilt the gallery’s website on Fur with React, Vite and React Router. Exhibitions, artists and visitor information now have their own clear structure, including dedicated artist pages and an optimized WebP image workflow.",
     image: "/img/projects/karolines-hus-browser.webp",
     url: "https://karolineshus.dk/",
     imagePosition: "center",
@@ -54,7 +54,7 @@ const projects = [
 const archive = [
   {
     name: "House of Vincent",
-    detail: "Shopify webshop",
+    detail: "Shopify store",
     url: "https://houseofvincent.com/"
   },
   {
@@ -183,14 +183,14 @@ export default function Home() {
             Cederdorff<span className="accent">.</span>
           </h1>
           <p className="hero-intro">
-            I teach, design and build for the web — and stay curious about everything in between.
+            I teach JavaScript and web development — and still love building for the web.
           </p>
           <a className="text-link" href="#work">
             Selected work <span aria-hidden="true">↓</span>
           </a>
         </div>
         <figure className="hero-portrait">
-          <img src="/img/new/race_2024.jpg" alt="Portrait of Rasmus Cederdorff in a yellow shirt" />
+          <img src="/img/new/race_2024.webp" alt="Portrait of Rasmus Cederdorff in a yellow shirt" />
         </figure>
       </header>
 
@@ -198,12 +198,12 @@ export default function Home() {
       <section className="statement" aria-labelledby="about-heading">
         <p className="section-label">01 / About</p>
         <div className="statement-body">
-          <h2 id="about-heading">Digital things are best made with people in mind.</h2>
+          <h2 id="about-heading">Code is easier to learn when you have something real to build.</h2>
           <div className="statement-details">
             <p className="statement-copy">
               I’m a senior lecturer at Business Academy Aarhus and a JavaScript developer with an eye for UI and UX.
-              Most days, I help students turn ideas into thoughtful digital products. Every now and then, I build
-              something of my own or make a website for a project I care about.
+              Most days, I help students turn ideas into working digital products. Alongside teaching, I build my own
+              experiments and make websites for projects I care about.
             </p>
             <dl className="about-facts">
               <div>
@@ -225,20 +225,16 @@ export default function Home() {
 
       <section className="personal-note" aria-labelledby="who-i-am-heading">
         <figure>
-          <img src="/img/new/race.jpg" alt="Black and white portrait of Rasmus Cederdorff" />
+          <img src="/img/new/race.webp" alt="Black and white portrait of Rasmus Cederdorff" />
         </figure>
         <div>
           <p className="section-label">Who I am</p>
           <h2 id="who-i-am-heading">Husband, dad and always making something.</h2>
           <div className="personal-copy">
             <p>
-              I’m Rasmus. I care about clear ideas, thoughtful details and creating space for people to learn, ask
-              questions and try things out.
-            </p>
-            <p>
-              Outside work, I’m a husband and dad. At home, there is always another renovation or interior project
-              underway, and that passion even took us onto the Danish TV programme Nybyggerne. Instagram is where I share
-              glimpses of it all.
+              Outside work, I’m a husband and dad, and there is usually another renovation or interior project underway
+              at home. That interest even took us onto the Danish TV programme Nybyggerne. I share parts of that life on
+              Instagram.
             </p>
           </div>
           <div className="personal-links">
@@ -255,28 +251,22 @@ export default function Home() {
       <section className="practice-section" aria-labelledby="practice-heading">
         <p className="section-label">How I work</p>
         <div className="practice-body">
-          <h2 id="practice-heading">Teaching, building and staying curious.</h2>
+          <h2 id="practice-heading">Most days I teach. Some days I build.</h2>
           <div className="practice-copy">
             <p>
-              Most of my time is spent teaching web development and JavaScript at Business Academy Aarhus. Serving as
-              an external examiner across Denmark keeps me inspired, up to date and often reassured that we are on the
-              right track.
+              A good learning environment starts with feeling safe enough to ask questions. There are no stupid
+              questions in my classroom, and getting something wrong is part of learning.
             </p>
-            <p>Alongside that, I build selected web projects and keep experimenting with new tools and ideas.</p>
+            <p>
+              I believe in a hands-on approach: write the code, build something, break it and try again. Working as an
+              external examiner across Denmark also gives me a useful look at how other schools approach the same
+              subjects.
+            </p>
           </div>
           <ul className="practice-list" aria-label="What my work consists of">
-            <li>
-              <span>01</span>
-              Web development & JavaScript
-            </li>
-            <li>
-              <span>02</span>
-              Selected digital projects
-            </li>
-            <li>
-              <span>03</span>
-              Tools, ideas & experiments
-            </li>
+            <li>Teaching JavaScript</li>
+            <li>Designing & building websites</li>
+            <li>Small experiments</li>
           </ul>
         </div>
       </section>
@@ -335,10 +325,10 @@ export default function Home() {
       <section className="teaching-work" aria-labelledby="teaching-work-heading">
         <div className="teaching-intro">
           <p className="section-label">Teaching in practice</p>
-          <h2 id="teaching-work-heading">What I teach also lives in code.</h2>
+          <h2 id="teaching-work-heading">The examples from class live on GitHub.</h2>
           <p>
-            I build exercises, starter projects and small experiments that give students something concrete to
-            explore, break and rebuild. Much of it is shared openly on GitHub.
+            I build exercises and starter projects so students have something concrete to explore, break and rebuild.
+            Much of the material is shared openly on GitHub.
           </p>
         </div>
         <div className="teaching-list">
@@ -365,7 +355,7 @@ export default function Home() {
       <section className="archive" aria-labelledby="archive-heading">
         <div className="archive-intro">
           <p className="section-label">Earlier work</p>
-          <h2 id="archive-heading">A few more things I’ve helped bring to life.</h2>
+          <h2 id="archive-heading">Apps, shops and client work from earlier years.</h2>
         </div>
         <div className="archive-content">
           <div className="archive-features">
@@ -392,8 +382,8 @@ export default function Home() {
                 <h3>BouTime</h3>
                 <p>
                   A shared tool for BouMatic employees covering time registration, absence, calendars and contacts. I
-                  designed and developed the original web and mobile app, and recently upgraded it with React Router
-                  7, TypeScript and Tailwind CSS.
+                  designed and developed the original web and mobile app. The current version uses React Router 7,
+                  TypeScript and Tailwind CSS.
                 </p>
               </div>
             </article>
@@ -420,8 +410,8 @@ export default function Home() {
         </h2>
         <div className="contact-bottom">
           <p>
-            I’m not running a freelance studio, but I’m always happy to hear about an interesting idea, a shared
-            curiosity or a good conversation.
+            I don’t run a freelance studio, but you’re always welcome to write about a project—or about web development,
+            design or teaching.
           </p>
           <div className="contact-links">
             <a href="mailto:rasmus@cederdorff.com">
