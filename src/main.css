@@ -393,8 +393,9 @@ figcaption {
   display: grid;
   grid-template-columns: 1fr 2.25fr;
   gap: clamp(40px, 7vw, 120px);
-  margin-bottom: clamp(70px, 10vw, 140px);
-  padding: 0 clamp(20px, 4vw, 64px);
+  width: calc(100% - clamp(40px, 8vw, 128px));
+  max-width: 1440px;
+  margin: 0 auto clamp(70px, 10vw, 140px);
 }
 
 .project-list {
@@ -403,8 +404,9 @@ figcaption {
 
 .project {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.75fr);
+  grid-template-columns: minmax(0, 920px) minmax(300px, 440px);
   gap: clamp(30px, 5vw, 80px);
+  justify-content: center;
   padding: clamp(70px, 9vw, 130px) clamp(20px, 4vw, 64px);
   color: var(--white);
 }
@@ -428,7 +430,7 @@ figcaption {
 }
 
 .project:nth-child(even) {
-  grid-template-columns: minmax(300px, 0.75fr) minmax(0, 1.45fr);
+  grid-template-columns: minmax(300px, 440px) minmax(0, 920px);
   background: var(--green);
 }
 
@@ -883,6 +885,7 @@ footer a {
   .project,
   .project:nth-child(even) {
     grid-template-columns: 1fr;
+    gap: clamp(30px, 5vw, 44px);
   }
 
   .project:nth-child(even) figure {
@@ -897,6 +900,10 @@ footer a {
   .project .project-figure--browser {
     height: auto;
     min-height: 0;
+  }
+
+  .project-copy {
+    padding-bottom: 0;
   }
 
   .personal-note {
@@ -947,6 +954,10 @@ footer a {
   .archive {
     padding-right: 20px;
     padding-left: 20px;
+  }
+
+  .project {
+    padding: 64px 20px;
   }
 
   .archive-list a {
