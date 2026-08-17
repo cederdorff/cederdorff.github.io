@@ -7,7 +7,7 @@ const projects = [
     role: "UX/UI, React development & deployment",
     description:
       "I rebuilt the association’s former website with React and React Router. The main challenge was giving each artist the same framework without making their work feel the same. I also set up the navigation, GitHub Pages deployment and a WebP image workflow.",
-    image: "/img/projects/vestjydske-kunstnere-browser.webp",
+    image: "/img/projects/vestjydske-kunstnere-site.webp",
     url: "https://vestjydskekunstnere.dk/",
     imagePosition: "center",
     imageFit: "contain",
@@ -19,7 +19,7 @@ const projects = [
     role: "Research, storytelling, design & development",
     description:
       "This personal archive brings together Paul M. Cederdorff’s art, stories and work as a teacher. I researched, designed and built it using artworks and material from the family archive.",
-    image: "/img/projects/paul-cederdorff-browser.webp",
+    image: "/img/projects/paul-cederdorff-site.webp",
     url: "https://cederdorff.dk/",
     imagePosition: "center",
     imageFit: "contain",
@@ -31,7 +31,7 @@ const projects = [
     role: "Design & development",
     description:
       "For this bed & breakfast near Odense, I kept the interface quiet and let the photographs do most of the work. The site focuses on the place, the atmosphere and the practical details guests need.",
-    image: "/img/projects/spangsgaard-browser.webp",
+    image: "/img/projects/spangsgaard-site.webp",
     url: "https://spangsgaard.com/",
     imagePosition: "center",
     imageFit: "contain",
@@ -43,7 +43,7 @@ const projects = [
     role: "UX/UI, React development & modernization",
     description:
       "I rebuilt the gallery’s website on Fur with React, Vite and React Router. Exhibitions, artists and visitor information now have their own clear structure, including dedicated artist pages and an optimized WebP image workflow.",
-    image: "/img/projects/karolines-hus-browser.webp",
+    image: "/img/projects/karolines-hus-site.webp",
     url: "https://karolineshus.dk/",
     imagePosition: "center",
     imageFit: "contain",
@@ -207,7 +207,7 @@ export default function Home() {
             <p className="statement-copy">
               I’m a senior lecturer at Business Academy Aarhus and a JavaScript developer with an eye for UI and UX.
               Most days, I help students turn ideas into working digital products. Alongside teaching, I build my own
-              experiments and make websites for projects I care about.
+              experiments and create digital projects I care about.
             </p>
             <dl className="about-facts">
               <div>
@@ -269,7 +269,7 @@ export default function Home() {
           </div>
           <ul className="practice-list" aria-label="What my work consists of">
             <li>Teaching JavaScript</li>
-            <li>Designing & building websites</li>
+            <li>Designing & building web apps</li>
             <li>Small experiments</li>
           </ul>
         </div>
@@ -286,7 +286,10 @@ export default function Home() {
       <section className="work" aria-labelledby="work-heading">
         <div className="section-heading">
           <p className="section-label">02 / Selected work</p>
-          <h2 id="work-heading">Recent work</h2>
+          <h2 id="work-heading">
+            <span>Recent</span>{" "}
+            <span>work</span>
+          </h2>
         </div>
 
         <div className="project-list">
@@ -423,6 +426,9 @@ export default function Home() {
             </a>
             <a href="https://www.linkedin.com/in/cederdorff/" target="_blank" rel="noreferrer">
               LinkedIn <Arrow />
+            </a>
+            <a href="https://www.instagram.com/cederdorff/" target="_blank" rel="noreferrer">
+              Instagram <Arrow />
             </a>
             <a href="https://github.com/cederdorff" target="_blank" rel="noreferrer">
               GitHub <Arrow />

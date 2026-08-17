@@ -384,36 +384,96 @@ figcaption {
 }
 
 .work {
+  overflow: hidden;
   padding: clamp(100px, 14vw, 210px) 0 0;
   color: var(--white);
   background: var(--green);
 }
 
 .section-heading {
-  display: grid;
-  grid-template-columns: 1fr 2.25fr;
-  gap: clamp(40px, 7vw, 120px);
-  width: calc(100% - clamp(40px, 8vw, 128px));
-  max-width: 1440px;
+  display: block;
+  width: 100%;
+  max-width: none;
   margin: 0 auto clamp(70px, 10vw, 140px);
+  padding: 0 clamp(20px, 4vw, 64px);
+}
+
+.section-heading .section-label {
+  position: relative;
+  z-index: 1;
+  color: var(--yellow);
+}
+
+.section-heading h2 {
+  max-width: none;
+  margin-top: clamp(42px, 6vw, 88px);
+  font-size: clamp(7rem, 15vw, 16rem);
+  letter-spacing: -0.055em;
+  line-height: 0.68;
+  text-transform: uppercase;
+}
+
+.section-heading h2 span {
+  display: block;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.section-heading h2 span:first-child {
+  transform: translateX(clamp(0px, 7vw, 120px));
+}
+
+.section-heading h2 span:last-child {
+  color: var(--yellow);
+  transform: translateX(clamp(44px, 34vw, 680px));
 }
 
 .project-list {
+  --project-cut: clamp(28px, 3.5vw, 64px);
   display: grid;
 }
 
 .project {
+  position: relative;
+  isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 920px) minmax(300px, 440px);
+  grid-template-columns: minmax(0, 920px) minmax(280px, 440px);
   gap: clamp(30px, 5vw, 80px);
   justify-content: center;
   padding: clamp(70px, 9vw, 130px) clamp(20px, 4vw, 64px);
   color: var(--white);
 }
 
+.project:focus-visible {
+  outline-offset: -6px;
+}
+
 .project:nth-child(odd) {
   color: var(--ink);
+  background: transparent;
+}
+
+.project:nth-child(odd)::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
   background: var(--soft);
+  clip-path: polygon(
+    0 var(--project-cut),
+    100% 0,
+    100% calc(100% - var(--project-cut)),
+    0 100%
+  );
+}
+
+.project:nth-child(4n + 3)::before {
+  clip-path: polygon(
+    0 0,
+    100% var(--project-cut),
+    100% 100%,
+    0 calc(100% - var(--project-cut))
+  );
 }
 
 .project:nth-child(odd) .project-meta {
@@ -430,7 +490,7 @@ figcaption {
 }
 
 .project:nth-child(even) {
-  grid-template-columns: minmax(300px, 440px) minmax(0, 920px);
+  grid-template-columns: minmax(280px, 440px) minmax(0, 920px);
   background: var(--green);
 }
 
@@ -461,8 +521,8 @@ figcaption {
 
 .project .project-figure--browser img {
   height: auto;
-  border-radius: clamp(7px, 0.9vw, 14px);
-  box-shadow: 0 12px 32px rgba(21, 42, 48, 0.18);
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .project img {
@@ -484,7 +544,7 @@ figcaption {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-bottom: 6px;
+  padding-bottom: clamp(24px, 2vw, 36px);
 }
 
 .project-meta {
@@ -596,7 +656,7 @@ figcaption {
 .teaching-list .teaching-all {
   padding-right: 20px;
   padding-left: 20px;
-  background: var(--ink);
+  background: var(--green);
   color: var(--paper);
 }
 
@@ -872,7 +932,6 @@ footer a {
 
   .statement,
   .archive,
-  .section-heading,
   .practice-section,
   .teaching-work {
     grid-template-columns: 1fr;
@@ -939,6 +998,20 @@ footer a {
 
   .hero h1 {
     font-size: clamp(3.65rem, 19vw, 5.8rem);
+  }
+
+  .section-heading h2 {
+    margin-top: 36px;
+    font-size: clamp(4.5rem, 20vw, 7rem);
+    line-height: 0.72;
+  }
+
+  .section-heading h2 span:first-child {
+    transform: none;
+  }
+
+  .section-heading h2 span:last-child {
+    transform: translateX(clamp(32px, 18vw, 90px));
   }
 
   .brand-lockup > span:last-child {
