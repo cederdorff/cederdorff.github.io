@@ -52,6 +52,16 @@ export const archiveLinks = [
     name: "Café Sidewalk",
     detail: "Website",
     url: "https://sidewalk.dk/"
+  },
+  {
+    name: "Troelstrup",
+    detail: "WordPress & WooCommerce theme",
+    url: "https://troelstrup.com/"
+  },
+  {
+    name: "Dansk Retursystem",
+    detail: "Booking forms, WordPress & GravityForms",
+    url: "https://www.danskretursystem.dk/kundeservice/"
   }
 ];
 
@@ -87,13 +97,23 @@ export const teachingResources = [
     url: "https://github.com/cederdorff/figma-to-react"
   },
   {
-    name: "Webcam-controlled game",
-    detail: "React, TensorFlow.js & browser interaction",
-    url: "https://github.com/cederdorff/webcam-controlled-game"
+    name: "Air Juggler",
+    detail: "Webcam hand-tracking paddle game in React",
+    url: "https://github.com/cederdorff/air-juggler-game"
+  },
+  {
+    name: "Hand Catch",
+    detail: "Hand-tracking game with score & timer",
+    url: "https://github.com/cederdorff/hand-catch-game"
   },
   {
     name: "Dandelion Field",
     detail: "Hand tracking & creative coding in React",
     url: "https://github.com/cederdorff/dandelion-experiment"
+  },
+  {
+    name: "Mellemrum",
+    detail: "React & Supabase product case study",
+    url: "https://github.com/cederdorff/mellemrum"
   }
 ];

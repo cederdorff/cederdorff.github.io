@@ -2,7 +2,7 @@ import Arrow from "../ui/Arrow";
 
 export default function PersonalSection() {
   return (
-    <section className="personal-note" aria-labelledby="who-i-am-heading">
+    <section className="personal-note reveal" aria-labelledby="who-i-am-heading">
       <figure>
         <img src="/img/new/race.webp" alt="Black and white portrait of Rasmus Cederdorff" />
       </figure>

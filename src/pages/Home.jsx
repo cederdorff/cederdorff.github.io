@@ -10,11 +10,13 @@ import WorkSection from "../components/home/WorkSection";
 import SiteFooter from "../components/layout/SiteFooter";
 import SiteNav from "../components/layout/SiteNav";
 import useActiveSection from "../hooks/useActiveSection";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 const SECTION_IDS = ["about", "work", "contact"];
 
 export default function Home() {
   const activeSection = useActiveSection(SECTION_IDS);
+  useScrollReveal();
 
   return (
     <>

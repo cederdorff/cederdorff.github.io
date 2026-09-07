@@ -5,13 +5,14 @@ import ArchiveFeature from "./ArchiveFeature";
 export default function ArchiveSection() {
   return (
     <section className="archive" aria-labelledby="archive-heading">
-      <div className="archive-intro">
+      <div className="archive-intro reveal">
         <p className="section-label">Earlier work</p>
         <h2 id="archive-heading">Apps, shops and client work from earlier years.</h2>
       </div>
       <div className="archive-content">
         <div className="archive-features">
           <ArchiveFeature
+            className="reveal"
             image="/img/thebigfridge_web.webp"
             imageAlt="The BIG Fridge logo"
             role="Food sharing · Mobile app"
@@ -21,7 +22,7 @@ export default function ArchiveSection() {
             worked across product design and development, building the app with Ionic, Angular, JavaScript and Firebase.
           </ArchiveFeature>
           <ArchiveFeature
-            className="archive-feature--boutime"
+            className="archive-feature--boutime reveal"
             image="/img/boutime_web.webp"
             imageAlt="BouTime displayed on a tablet"
             role="Work management · Web & mobile app"
@@ -34,7 +35,7 @@ export default function ArchiveSection() {
         </div>
         <div className="archive-list">
           {archiveLinks.map((item) => (
-            <a href={item.url} target="_blank" rel="noreferrer" key={item.name}>
+            <a className="reveal" href={item.url} target="_blank" rel="noreferrer" key={item.name}>
               <span>{item.name}</span>
               <span>{item.detail}</span>
               <Arrow />

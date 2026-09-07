@@ -2,6 +2,7 @@ export default function PracticeSection() {
   return (
     <section className="practice-section" aria-labelledby="practice-heading">
       <p className="section-label">How I work</p>
+      <div className="accent-shape accent-shape--drop" aria-hidden="true"></div>
       <div className="practice-body">
         <h2 id="practice-heading">Most days I teach. Some days I build.</h2>
         <div className="practice-copy">
@@ -15,9 +16,9 @@ export default function PracticeSection() {
           </p>
         </div>
         <ul className="practice-list" aria-label="What my work consists of">
-          <li>Teaching JavaScript</li>
-          <li>Designing & building web apps</li>
-          <li>Small experiments</li>
+          <li className="reveal">Teaching JavaScript</li>
+          <li className="reveal">Designing & building web apps</li>
+          <li className="reveal">Small experiments</li>
         </ul>
       </div>
     </section>

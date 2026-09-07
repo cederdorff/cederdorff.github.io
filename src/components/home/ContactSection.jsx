@@ -10,12 +10,14 @@ const contactLinks = [
 export default function ContactSection() {
   return (
     <section className="contact" id="contact" aria-labelledby="contact-heading">
-      <p className="section-label">03 / Contact</p>
-      <h2 id="contact-heading">
-        Let’s keep in
-        <br />
-        touch<span className="accent">.</span>
-      </h2>
+      <div className="reveal">
+        <p className="section-label">03 / Contact</p>
+        <h2 id="contact-heading">
+          Let’s keep in
+          <br />
+          touch<span className="accent">.</span>
+        </h2>
+      </div>
       <div className="contact-bottom">
         <p>
           I don’t run a freelance studio, but you’re always welcome to write about a project—or about web development,
@@ -27,6 +29,7 @@ export default function ContactSection() {
 
             return (
               <a
+                className="reveal"
                 href={link.url}
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noreferrer" : undefined}

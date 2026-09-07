@@ -3,7 +3,7 @@ import Arrow from "../ui/Arrow";
 export default function ProjectCard({ project, index }) {
   return (
     <a
-      className="project"
+      className="project reveal"
       href={project.url}
       target="_blank"
       rel="noreferrer"
