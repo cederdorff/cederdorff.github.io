@@ -15,9 +15,14 @@ export default function PracticeSection() {
               questions in my classroom, and getting something wrong is part of learning.
             </p>
             <p>
-              I believe in a hands-on approach: write the code, build something, break it and try again. Working as an
-              external examiner across Denmark also gives me a useful look at how other schools approach the same
-              subjects.
+              My teaching is hands-on and iterative: a short introduction, then the students code and practice, then
+              we sum up together and go again. I keep the introductions compact on purpose. I would rather not hand
+              over everything up front, because students learn more when they have to investigate and work things out
+              themselves.
+            </p>
+            <p>
+              Working as an external examiner across Denmark also gives me a useful look at how other schools approach
+              the same subjects.
             </p>
           </div>
           <LessonLoop />

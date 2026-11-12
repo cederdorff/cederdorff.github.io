@@ -1117,17 +1117,17 @@ footer a:hover {
 
 /* The highlight walks through the loop body, one call at a time. */
 .loop-line--step {
-  animation: loopStep 4.8s linear infinite;
-  animation-delay: calc(var(--i) * 1.2s);
+  animation: loopStep 4.5s linear infinite;
+  animation-delay: calc(var(--i) * 1.5s);
 }
 
 @keyframes loopStep {
   0%,
-  24% {
+  32% {
     background: color-mix(in srgb, var(--accent) 20%, transparent);
   }
 
-  25%,
+  33.3%,
   100% {
     background: transparent;
   }

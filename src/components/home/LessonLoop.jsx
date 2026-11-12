@@ -1,8 +1,7 @@
 const STEPS = [
-  { call: "write", note: "the code yourself" },
-  { call: "build", note: "something real" },
-  { call: "breakIt", note: "on purpose or not" },
-  { call: "tryAgain", note: "" }
+  { call: "intro", args: "topic", note: "short on purpose" },
+  { call: "practice", args: "", note: "code and explore" },
+  { call: "recap", args: "", note: "what did we find out?" }
 ];
 
 export default function LessonLoop() {
@@ -17,20 +16,26 @@ export default function LessonLoop() {
         </div>
         <pre className="code-body">
           <div className="loop-line">
-            <span className="kw">while</span>
-            <span className="punc"> (!</span>
-            <span className="prop">itClicks</span>
+            <span className="kw">for</span>
+            <span className="punc"> (</span>
+            <span className="kw">const</span>
+            <span className="prop"> topic </span>
+            <span className="kw">of</span>
+            <span className="prop"> course</span>
             <span className="punc">) {"{"}</span>
           </div>
           {STEPS.map((step, index) => (
             <div className="loop-line loop-line--step" style={{ "--i": index }} key={step.call}>
               <span className="fn">{`  ${step.call}`}</span>
-              <span className="punc">();</span>
-              {step.note && <span className="com">{`  // ${step.note}`}</span>}
+              <span className="punc">(</span>
+              <span className="prop">{step.args}</span>
+              <span className="punc">);</span>
+              <span className="com">{`  // ${step.note}`}</span>
             </div>
           ))}
           <div className="loop-line">
             <span className="punc">{"}"}</span>
+            <span className="com">{"  // then from the top"}</span>
           </div>
         </pre>
       </div>
