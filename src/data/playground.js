@@ -8,4 +8,4 @@ export const ACCENTS = [
 
 export const GLYPH_LIMITS = { min: 0, max: 60, step: 6 };
 
-export const DEFAULT_SETTINGS = { accent: "yellow", glyphs: 24, gravity: false };
+export const DEFAULT_SETTINGS = { accent: "yellow", glyphs: 18, gravity: false };

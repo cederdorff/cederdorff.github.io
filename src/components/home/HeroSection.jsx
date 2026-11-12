@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import useCyclingText from "../../hooks/useCyclingText";
 import { ACCENTS, DEFAULT_SETTINGS } from "../../data/playground";
 import CodePanel from "./CodePanel";
 import GlyphField from "./GlyphField";
@@ -7,7 +6,6 @@ import GlyphField from "./GlyphField";
 const ROLES = ["Senior Lecturer", "Web App Developer", "Dad"];
 
 export default function HeroSection() {
-  const role = useCyclingText(ROLES);
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
   const accentColor = ACCENTS.find((item) => item.name === settings.accent).value;
 
@@ -24,20 +22,16 @@ export default function HeroSection() {
     <header className="hero" id="top">
       <GlyphField count={settings.glyphs} gravity={settings.gravity} accent={accentColor} />
       <div className="hero-copy">
-        <p className="eyebrow">
-          <span key={role} className="eyebrow-role">
-            {role}
-          </span>{" "}
-          · Holstebro
-        </p>
         <h1>
           Rasmus
           <br />
           Cederdorff<span className="accent">.</span>
         </h1>
-        <p className="hero-intro">
-          Hi, I’m Rasmus. I teach JavaScript and web development, and I still love building things for the web.
-        </p>
+        <ul className="hero-roles">
+          {ROLES.map((role) => (
+            <li key={role}>{role}</li>
+          ))}
+        </ul>
         <div className="hero-links">
           <a className="text-link" href="#teaching">
             How I teach <span aria-hidden="true">↓</span>
