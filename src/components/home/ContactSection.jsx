@@ -11,7 +11,7 @@ export default function ContactSection() {
   return (
     <section className="contact" id="contact" aria-labelledby="contact-heading">
       <div className="reveal">
-        <p className="section-label">03 / Contact</p>
+        <p className="section-label">04 / Contact</p>
         <h2 id="contact-heading">
           Let’s keep in
           <br />

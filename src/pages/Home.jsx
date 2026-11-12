@@ -12,7 +12,7 @@ import SiteNav from "../components/layout/SiteNav";
 import useActiveSection from "../hooks/useActiveSection";
 import useScrollReveal from "../hooks/useScrollReveal";
 
-const SECTION_IDS = ["about", "work", "contact"];
+const SECTION_IDS = ["about", "teaching", "work", "contact"];
 
 export default function Home() {
   const activeSection = useActiveSection(SECTION_IDS);
@@ -30,13 +30,16 @@ export default function Home() {
         <div className="chapter" id="about">
           <AboutSection />
           <PersonalSection />
+        </div>
+
+        <div className="chapter" id="teaching">
           <PracticeSection />
+          <TeachingSection />
           <WorkBanner />
         </div>
 
         <div className="chapter" id="work">
           <WorkSection />
-          <TeachingSection />
           <ArchiveSection />
         </div>
 

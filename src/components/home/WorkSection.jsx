@@ -5,7 +5,7 @@ export default function WorkSection() {
   return (
     <section className="work" aria-labelledby="work-heading">
       <div className="section-heading reveal">
-        <p className="section-label">02 / Selected work</p>
+        <p className="section-label">03 / Selected work</p>
         <h2 id="work-heading">
           <span>Recent</span>
           <span>work</span>

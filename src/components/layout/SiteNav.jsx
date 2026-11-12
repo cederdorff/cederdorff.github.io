@@ -2,6 +2,7 @@ import BrandLockup from "../ui/BrandLockup";
 
 const links = [
   { id: "about", label: "About" },
+  { id: "teaching", label: "Teaching" },
   { id: "work", label: "Work" },
   { id: "contact", label: "Contact" }
 ];

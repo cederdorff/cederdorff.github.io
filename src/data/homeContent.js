@@ -65,54 +65,66 @@ export const archiveLinks = [
   }
 ];
 
+export const teachingTopics = ["Fundamentals", "Full-stack", "Design → code", "Creative coding"];
+
 export const teachingResources = [
   {
     name: "Portfolio on GitHub Pages",
+    topic: "Design → code",
     detail: "React template, routing & deployment",
     url: "https://github.com/cederdorff/username.github.io"
   },
   {
     name: "Post App + Supabase",
+    topic: "Full-stack",
     detail: "React CRUD, routing & backend",
     url: "https://github.com/cederdorff/post-app-supabase"
   },
   {
     name: "Codeagram",
+    topic: "Fundamentals",
     detail: "Components, state & events in React",
     url: "https://github.com/cederdorff/codeagram"
   },
   {
     name: "JavaScript Movie App",
+    topic: "Fundamentals",
     detail: "DOM, data, fetch & interaction",
     url: "https://github.com/cederdorff/js-movie-app"
   },
   {
     name: "React Products",
+    topic: "Fundamentals",
     detail: "A practical React product exercise",
     url: "https://github.com/cederdorff/react-products"
   },
   {
     name: "Figma to React",
+    topic: "Design → code",
     detail: "Design-to-code lessons & course material",
     url: "https://github.com/cederdorff/figma-to-react"
   },
   {
     name: "Air Juggler",
+    topic: "Creative coding",
     detail: "Webcam hand-tracking paddle game in React",
     url: "https://github.com/cederdorff/air-juggler-game"
   },
   {
     name: "Hand Catch",
+    topic: "Creative coding",
     detail: "Hand-tracking game with score & timer",
     url: "https://github.com/cederdorff/hand-catch-game"
   },
   {
     name: "Dandelion Field",
+    topic: "Creative coding",
     detail: "Hand tracking & creative coding in React",
     url: "https://github.com/cederdorff/dandelion-experiment"
   },
   {
     name: "Mellemrum",
+    topic: "Full-stack",
     detail: "React & Supabase product case study",
     url: "https://github.com/cederdorff/mellemrum"
   }
