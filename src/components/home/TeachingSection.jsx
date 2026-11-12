@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { teachingResources, teachingTopics } from "../../data/homeContent";
 import Arrow from "../ui/Arrow";
 
@@ -13,6 +13,19 @@ function repoPath(url) {
 export default function TeachingSection() {
   const [topic, setTopic] = useState(ALL);
   const [expanded, setExpanded] = useState(false);
+  const browserRef = useRef(null);
+
+  const toggleExpanded = () => {
+    const collapsing = expanded;
+
+    setExpanded(!expanded);
+
+    // The list gets several screens shorter when it folds, so go back to its top
+    // instead of leaving the reader wherever the page happens to end up.
+    if (collapsing) {
+      requestAnimationFrame(() => browserRef.current?.scrollIntoView({ block: "start" }));
+    }
+  };
   const resources = topic === ALL ? teachingResources : teachingResources.filter((item) => item.topics.includes(topic));
   const visible = expanded ? resources : resources.slice(0, LIMIT);
 
@@ -27,7 +40,7 @@ export default function TeachingSection() {
         </p>
       </div>
 
-      <div className="repo-browser">
+      <div className="repo-browser" ref={browserRef}>
         <div className="repo-toolbar reveal">
           <div className="repo-filters" role="group" aria-label="Filter repositories by topic">
             {[ALL, ...teachingTopics].map((name) => (
@@ -37,7 +50,7 @@ export default function TeachingSection() {
             ))}
           </div>
           <p className="repo-count" aria-live="polite">
-            {visible.length} of {teachingResources.length} repos
+            {topic === ALL ? `${resources.length} repos` : `${resources.length} of ${teachingResources.length} repos`}
           </p>
         </div>
 
@@ -75,7 +88,7 @@ export default function TeachingSection() {
             className="repo-more"
             aria-controls="repo-grid"
             aria-expanded={expanded}
-            onClick={() => setExpanded(!expanded)}
+            onClick={toggleExpanded}
           >
             {expanded ? "Show fewer" : `Show all ${resources.length} repos`}
           </button>

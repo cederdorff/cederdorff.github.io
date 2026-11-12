@@ -23,8 +23,8 @@ export default function Home() {
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>
+      <SiteNav activeSection={activeSection} />
       <main id="main-content" tabIndex="-1">
-        <SiteNav activeSection={activeSection} />
         <HeroSection />
 
         <div className="chapter" id="about">
@@ -44,8 +44,8 @@ export default function Home() {
         </div>
 
         <ContactSection />
-        <SiteFooter />
       </main>
+      <SiteFooter />
     </>
   );
 }
