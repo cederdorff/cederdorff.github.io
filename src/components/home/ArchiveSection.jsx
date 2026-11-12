@@ -22,15 +22,14 @@ export default function ArchiveSection() {
             worked across product design and development, building the app with Ionic, Angular, JavaScript and Firebase.
           </ArchiveFeature>
           <ArchiveFeature
-            className="archive-feature--boutime reveal"
-            image="/img/boutime_web.webp"
-            imageAlt="BouTime displayed on a tablet"
-            role="Work management · Web & mobile app"
-            title="BouTime"
+            className="archive-feature--reverse reveal"
+            image="/img/houseofvincent.webp"
+            imageAlt="A hand wearing a House of Vincent watch, holding a cup of coffee"
+            role="Jewellery · Shopify store"
+            title="House of Vincent"
+            url="https://houseofvincent.com/"
           >
-            A shared tool for BouMatic employees covering time registration, absence, calendars and contacts. I designed
-            and developed the original web and mobile app. The current version uses React Router 7, TypeScript and
-            Tailwind CSS.
+            The online store for the Danish jewellery brand House of Vincent, built on Shopify.
           </ArchiveFeature>
         </div>
         <div className="archive-list">

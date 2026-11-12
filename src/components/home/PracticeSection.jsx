@@ -8,12 +8,12 @@ export default function PracticeSection() {
       <RaceMark />
       <div className="practice-body">
         <h2 id="practice-heading">Most days I teach. Some days I build.</h2>
+        <p className="practice-lead">
+            A good learning environment starts with feeling safe enough to ask questions. There are no stupid
+            questions in my classroom, and getting something wrong is part of learning.
+        </p>
         <div className="practice-split">
           <div className="practice-copy">
-            <p>
-              A good learning environment starts with feeling safe enough to ask questions. There are no stupid
-              questions in my classroom, and getting something wrong is part of learning.
-            </p>
             <p>
               My teaching is hands-on and iterative: a short introduction, then the students code and practice, then
               we sum up together and go again. I keep the introductions compact on purpose. I would rather not hand

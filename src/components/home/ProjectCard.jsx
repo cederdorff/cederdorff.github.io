@@ -1,25 +1,25 @@
 import Arrow from "../ui/Arrow";
 
+// Site screenshots are 2400×1525 with a 1200px variant next to them.
+// Other images state their own size and are used as they are.
+function imageProps(project) {
+  if (project.imageWidth) {
+    return { width: project.imageWidth, height: project.imageHeight };
+  }
+
+  return {
+    srcSet: `${project.image.replace(".webp", "-1200.webp")} 1200w, ${project.image} 2400w`,
+    sizes: "(max-width: 900px) 100vw, 920px",
+    width: 2400,
+    height: 1525
+  };
+}
+
 export default function ProjectCard({ project, index }) {
-  return (
-    <a
-      className="project reveal"
-      href={project.url}
-      target="_blank"
-      rel="noreferrer"
-      aria-label={`Visit ${project.title}`}
-    >
+  const content = (
+    <>
       <figure className="project-figure--screenshot">
-        <img
-          src={project.image}
-          srcSet={`${project.image.replace(".webp", "-1200.webp")} 1200w, ${project.image} 2400w`}
-          sizes="(max-width: 900px) 100vw, 920px"
-          width="2400"
-          height="1525"
-          loading="lazy"
-          decoding="async"
-          alt=""
-        />
+        <img src={project.image} {...imageProps(project)} loading="lazy" decoding="async" alt="" />
       </figure>
       <div className="project-copy">
         <div className="project-meta">
@@ -28,10 +28,27 @@ export default function ProjectCard({ project, index }) {
         </div>
         <p className="project-role">{project.role}</p>
         <h3>
-          {project.title} <Arrow />
+          {project.title} {project.url && <Arrow />}
         </h3>
         <p>{project.description}</p>
       </div>
+    </>
+  );
+
+  // Projects without a public address (internal tools) are shown, but not linked.
+  if (!project.url) {
+    return <article className="project project--static reveal">{content}</article>;
+  }
+
+  return (
+    <a
+      className="project reveal"
+      href={project.url}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`Visit ${project.title}`}
+    >
+      {content}
     </a>
   );
 }

@@ -36,18 +36,18 @@ export default function RaceMark() {
   return (
     <button
       type="button"
-      className="race-mark"
+      className="glyph-mark"
       onClick={() => setLayout(shuffle)}
       aria-label="RACE, my initials. Press to shuffle the letters."
     >
-      <span className="race-letters" aria-hidden="true">
+      <span className="glyph-letters" aria-hidden="true">
         {LETTERS.map((letter, index) => {
           const { rotate, x, y } = layout.letters[index];
           const style = STYLES[(index + layout.shift) % STYLES.length];
 
           return (
             <span
-              className={`race-letter race-letter--${style}`}
+              className={`glyph-letter glyph-letter--${style}`}
               style={{ "--rotate": `${rotate}deg`, "--x": `${x}%`, "--y": `${y}%` }}
               key={letter}
             >
@@ -56,7 +56,7 @@ export default function RaceMark() {
           );
         })}
       </span>
-      <span className="race-hint" aria-hidden="true">
+      <span className="glyph-hint" aria-hidden="true">
         {"// click to shuffle"}
       </span>
     </button>

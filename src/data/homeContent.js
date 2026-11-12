@@ -34,15 +34,20 @@ export const projects = [
       "I rebuilt the gallery’s website on Fur with React, Vite and React Router. Exhibitions, artists and visitor information now have their own clear structure, including dedicated artist pages and an optimized WebP image workflow.",
     image: "/img/projects/karolines-hus-site.webp",
     url: "https://karolineshus.dk/"
+  },
+  {
+    title: "BouTime",
+    type: "Work management · Web & mobile app",
+    role: "Design & development",
+    description:
+      "A shared tool for BouMatic employees covering time registration, absence, calendars and contacts. I designed and developed the original web and mobile app. The current version uses React Router 7, TypeScript and Tailwind CSS.",
+    image: "/img/boutime_web.webp",
+    imageWidth: 1000,
+    imageHeight: 750
   }
 ];
 
 export const archiveLinks = [
-  {
-    name: "House of Vincent",
-    detail: "Shopify store",
-    url: "https://houseofvincent.com/"
-  },
   {
     name: "BouMatic",
     detail: "Website",

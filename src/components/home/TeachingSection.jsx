@@ -3,6 +3,8 @@ import { teachingResources, teachingTopics } from "../../data/homeContent";
 import Arrow from "../ui/Arrow";
 
 const ALL = "All";
+// Seven repos plus the "More on GitHub" card make two full rows of four on a desktop.
+const LIMIT = 7;
 
 function repoPath(url) {
   return new URL(url).pathname.slice(1);
@@ -10,7 +12,9 @@ function repoPath(url) {
 
 export default function TeachingSection() {
   const [topic, setTopic] = useState(ALL);
+  const [expanded, setExpanded] = useState(false);
   const resources = topic === ALL ? teachingResources : teachingResources.filter((item) => item.topics.includes(topic));
+  const visible = expanded ? resources : resources.slice(0, LIMIT);
 
   return (
     <section className="teaching-work" aria-labelledby="teaching-work-heading">
@@ -33,12 +37,12 @@ export default function TeachingSection() {
             ))}
           </div>
           <p className="repo-count" aria-live="polite">
-            {resources.length} of {teachingResources.length} repos
+            {visible.length} of {teachingResources.length} repos
           </p>
         </div>
 
-        <ul className="repo-grid">
-          {resources.map((resource, index) => (
+        <ul className="repo-grid" id="repo-grid">
+          {visible.map((resource, index) => (
             <li style={{ "--i": index }} key={`${topic}-${resource.name}`}>
               <a className="repo-card" href={resource.url} target="_blank" rel="noreferrer">
                 <span className="repo-topic">{resource.topics.join(" · ")}</span>
@@ -50,7 +54,7 @@ export default function TeachingSection() {
               </a>
             </li>
           ))}
-          <li style={{ "--i": resources.length }} key={`${topic}-all`}>
+          <li style={{ "--i": visible.length }} key={`${topic}-all`}>
             <a
               className="repo-card repo-card--all"
               href="https://github.com/cederdorff?tab=repositories"
@@ -65,6 +69,17 @@ export default function TeachingSection() {
             </a>
           </li>
         </ul>
+        {resources.length > LIMIT && (
+          <button
+            type="button"
+            className="repo-more"
+            aria-controls="repo-grid"
+            aria-expanded={expanded}
+            onClick={() => setExpanded(!expanded)}
+          >
+            {expanded ? "Show fewer" : `Show all ${resources.length} repos`}
+          </button>
+        )}
       </div>
     </section>
   );

@@ -25,6 +25,11 @@
   --soft: #acc6c9;
   --yellow: #e7c960;
   --accent: var(--yellow);
+  /* Everything secondary is a tint of the two style-guide blue-greens (--green and --soft). */
+  --soft-text: #d3dfe0;
+  --line-on-dark: rgba(172, 198, 201, 0.36);
+  --muted: #5e7076;
+  --gutter: clamp(24px, 6vw, 96px);
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --green: #264c59;
   --white: #f7f7f5;
@@ -145,10 +150,10 @@ blockquote {
   justify-content: space-between;
   width: 100%;
   min-height: 76px;
-  padding: 16px clamp(20px, 4vw, 64px);
+  padding: 16px var(--gutter);
   color: var(--white);
   background: rgba(38, 76, 89, 0.96);
-  border-bottom: 1px solid rgba(172, 198, 201, 0.36);
+  border-bottom: 1px solid var(--line-on-dark);
   backdrop-filter: blur(12px);
 }
 
@@ -307,7 +312,7 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 138px clamp(28px, 5.5vw, 88px) clamp(48px, 6vw, 88px);
+  padding: 138px var(--gutter) clamp(48px, 6vw, 88px);
 }
 
 .section-label,
@@ -381,7 +386,7 @@ footer a:hover {
   height: 100%;
   min-height: 620px;
   overflow: hidden;
-  background: #c8c8c5;
+  background: var(--soft);
 }
 
 .hero-portrait img {
@@ -667,7 +672,7 @@ footer a:hover {
   display: grid;
   grid-template-columns: 1fr 2.25fr;
   gap: clamp(40px, 7vw, 120px);
-  padding: clamp(112px, 14vw, 220px) clamp(24px, 6vw, 96px);
+  padding: clamp(112px, 14vw, 220px) var(--gutter);
 }
 
 .statement > .section-label,
@@ -676,30 +681,8 @@ footer a:hover {
   grid-row: 1;
 }
 
-.accent-shape {
-  grid-column: 1;
-  grid-row: 1;
-  position: absolute;
-  inset: auto auto 0 0;
-  width: clamp(100px, 9vw, 180px);
-  aspect-ratio: 1;
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  -webkit-mask-position: center;
-  pointer-events: none;
-}
-
-.accent-shape--ring {
-  mask-image: url("/img/new/shape-ring.webp");
-  -webkit-mask-image: url("/img/new/shape-ring.webp");
-  background: var(--soft);
-}
-
 /* RACE: my initials as a small pile of brand glyphs. Click to shuffle. */
-.race-mark {
+.glyph-mark {
   grid-column: 1;
   grid-row: 1;
   align-self: end;
@@ -713,7 +696,7 @@ footer a:hover {
   cursor: pointer;
 }
 
-.race-letters {
+.glyph-letters {
   display: grid;
   grid-template-columns: repeat(2, 1em);
   grid-auto-rows: 1em;
@@ -723,7 +706,7 @@ footer a:hover {
   line-height: 1;
 }
 
-.race-letter {
+.glyph-letter {
   display: grid;
   place-items: center;
   transform: translate(var(--x), var(--y)) rotate(var(--rotate));
@@ -731,35 +714,69 @@ footer a:hover {
     -webkit-text-stroke-color 300ms ease;
 }
 
-.race-letter--accent {
+.glyph-letter--accent {
   color: var(--accent);
 }
 
-.race-letter--green {
+.glyph-letter--green {
   color: var(--green);
 }
 
-.race-letter--soft {
+.glyph-letter--soft {
   color: var(--soft);
 }
 
-.race-letter--outline {
+.glyph-letter--outline {
   color: transparent;
   -webkit-text-stroke: 2px var(--ink);
 }
 
-.race-mark:hover .race-letter:nth-child(odd) {
+.glyph-mark:hover .glyph-letter:nth-child(odd) {
   transform: translate(var(--x), var(--y)) rotate(calc(var(--rotate) + 8deg));
 }
 
-.race-mark:hover .race-letter:nth-child(even) {
+.glyph-mark:hover .glyph-letter:nth-child(even) {
   transform: translate(var(--x), var(--y)) rotate(calc(var(--rotate) - 8deg));
 }
 
-.race-hint {
+/* The role mark is three glyphs in a row: a tag with something inside it. */
+.glyph-mark--roles .glyph-letters {
+  grid-template-columns: repeat(3, 0.82em);
+  font-size: clamp(4.6rem, 7.6vw, 8rem);
+}
+
+.glyph-letter {
+  --x: 0%;
+  --y: 0%;
+  --rotate: 0deg;
+}
+
+.glyph-letter--pop {
+  animation: glyphPop 520ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.glyph-hint--pop {
+  animation: hintIn 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hintIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@keyframes glyphPop {
+  from {
+    opacity: 0;
+    transform: scale(0.3) rotate(-40deg);
+  }
+}
+
+.glyph-hint {
   display: block;
   margin-top: 18px;
-  color: #5e7076;
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.74rem;
 }
@@ -799,7 +816,7 @@ footer a:hover {
 
 .about-facts div {
   display: grid;
-  grid-template-columns: 92px 1fr;
+  grid-template-columns: 104px 1fr;
   gap: 20px;
   padding: 22px 0 20px;
   border-bottom: 1px solid var(--ink);
@@ -813,8 +830,10 @@ footer a:hover {
 }
 
 .about-facts dt {
-  color: #5e7076;
-  letter-spacing: 0.08em;
+  padding-top: 0.1em;
+  color: var(--muted);
+  font-size: 0.74rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
@@ -823,7 +842,7 @@ footer a:hover {
   display: grid;
   grid-template-columns: 1fr 2.25fr;
   gap: clamp(40px, 7vw, 120px);
-  padding: clamp(112px, 14vw, 220px) clamp(24px, 6vw, 96px) clamp(72px, 9vw, 130px);
+  padding: clamp(112px, 14vw, 220px) var(--gutter) clamp(72px, 9vw, 130px);
 }
 
 .practice-body {
@@ -833,17 +852,22 @@ footer a:hover {
 .practice-body h2 {
   max-width: 880px;
   text-wrap: balance;
-  font-size: clamp(2.35rem, 4.2vw, 4.6rem);
+  font-size: clamp(2.6rem, 5.6vw, 6rem);
   font-weight: 400;
   letter-spacing: -0.035em;
   line-height: 0.98;
 }
 
-.practice-copy {
+.practice-lead {
   max-width: 680px;
-  margin-top: clamp(30px, 4vw, 48px);
-  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  margin-top: clamp(60px, 8vw, 112px);
+  font-size: clamp(1.06rem, 1.55vw, 1.38rem);
   line-height: 1.68;
+}
+
+.practice-copy {
+  font-size: 1.05rem;
+  line-height: 1.72;
 }
 
 .practice-copy p + p {
@@ -876,12 +900,16 @@ footer a:hover {
   width: 100%;
   max-width: none;
   margin: 0 auto clamp(90px, 12vw, 180px);
-  padding: 0 clamp(20px, 4vw, 64px);
+  padding: 0 var(--gutter);
 }
 
 .section-heading .section-label {
   position: relative;
   z-index: 1;
+  color: var(--accent);
+}
+
+.contact .section-label {
   color: var(--accent);
 }
 
@@ -921,7 +949,7 @@ footer a:hover {
   grid-template-columns: minmax(0, 920px) minmax(280px, 440px);
   gap: clamp(40px, 6vw, 104px);
   justify-content: center;
-  padding: clamp(96px, 12vw, 180px) clamp(20px, 4vw, 64px);
+  padding: clamp(96px, 12vw, 180px) var(--gutter);
   color: var(--white);
 }
 
@@ -1039,8 +1067,8 @@ footer a:hover {
   justify-content: space-between;
   gap: 20px;
   padding-bottom: 18px;
-  border-bottom: 1px solid #55554e;
-  color: #b8b7af;
+  border-bottom: 1px solid var(--line-on-dark);
+  color: var(--soft);
 }
 
 .project-copy h3 {
@@ -1057,8 +1085,8 @@ footer a:hover {
 .project-role {
   margin-top: 32px;
   color: var(--accent);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
+  font-size: 0.74rem;
+  letter-spacing: 0.15em;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -1066,17 +1094,17 @@ footer a:hover {
 .project-copy > p:last-child {
   max-width: 520px;
   margin-top: 36px;
-  color: #c8c6bd;
-  font-size: 1rem;
+  color: var(--soft-text);
+  font-size: 1.05rem;
   line-height: 1.72;
 }
 
 .practice-split {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(400px, 0.9fr);
-  gap: clamp(48px, 6vw, 96px);
+  grid-template-columns: minmax(0, 1fr) minmax(364px, 0.95fr);
+  gap: clamp(40px, 4.5vw, 64px);
   align-items: start;
-  margin-top: clamp(48px, 6vw, 84px);
+  margin-top: clamp(40px, 5vw, 64px);
 }
 
 .practice-split .practice-copy {
@@ -1091,12 +1119,12 @@ footer a:hover {
 
 .lesson-loop .code-body {
   overflow-x: auto;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
 }
 
 .lesson-loop figcaption {
   margin-top: 16px;
-  color: #5e7076;
+  color: var(--muted);
   font-size: 0.84rem;
   line-height: 1.5;
 }
@@ -1127,7 +1155,7 @@ footer a:hover {
 }
 
 .teaching-work {
-  padding: 0 clamp(24px, 6vw, 96px) clamp(112px, 14vw, 220px);
+  padding: 0 var(--gutter) clamp(112px, 14vw, 220px);
   background: var(--paper);
 }
 
@@ -1176,8 +1204,8 @@ footer a:hover {
   color: var(--ink);
   background: transparent;
   font: inherit;
-  font-size: 0.74rem;
-  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
   transition: background 160ms ease, color 160ms ease;
@@ -1194,7 +1222,7 @@ footer a:hover {
 }
 
 .repo-count {
-  color: #5e7076;
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.78rem;
 }
@@ -1234,8 +1262,8 @@ footer a:hover {
 
 .repo-topic {
   color: var(--green);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
+  font-size: 0.74rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
@@ -1248,7 +1276,7 @@ footer a:hover {
 
 .repo-detail {
   margin-top: 14px;
-  color: #4d6067;
+  color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.45;
 }
@@ -1259,10 +1287,33 @@ footer a:hover {
   gap: 12px;
   margin-top: auto;
   padding-top: 32px;
-  color: #5e7076;
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.72rem;
   overflow-wrap: anywhere;
+}
+
+.repo-more {
+  display: block;
+  min-width: 260px;
+  margin: clamp(32px, 4vw, 56px) auto 0;
+  padding: 18px 20px 16px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.repo-more:hover {
+  color: var(--white);
+  background: var(--green);
+  border-color: var(--green);
 }
 
 .repo-topic,
@@ -1295,7 +1346,7 @@ footer a:hover {
 .repo-card:focus-visible .repo-detail,
 .repo-card:focus-visible .repo-path,
 .repo-card--all .repo-path {
-  color: #c8d1d2;
+  color: var(--soft-text);
 }
 
 .repo-card:hover .arrow,
@@ -1362,7 +1413,7 @@ footer a:hover {
 }
 
 .archive-list span:nth-child(2) {
-  color: #5d5c56;
+  color: var(--muted);
 }
 
 .archive-list span:nth-child(2) {
@@ -1397,13 +1448,29 @@ footer a:hover {
   object-fit: cover;
 }
 
-.archive-feature--boutime {
+.archive-feature--reverse {
   grid-template-columns: 1fr minmax(170px, 220px);
 }
 
-.archive-feature--boutime figure {
+.archive-feature--reverse figure {
   order: 2;
-  background: var(--white);
+}
+
+.archive-feature h3 a {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.archive-feature h3 a:hover .arrow,
+.archive-feature h3 a:focus-visible .arrow {
+  transform: translate(3px, -3px);
+}
+
+/* Not a link, so it should not react like one. */
+.project--static:hover figure,
+.project--static:hover img {
+  transform: none;
 }
 
 .archive-feature > div {
@@ -1427,8 +1494,8 @@ footer a:hover {
 .archive-feature div > p:last-child {
   max-width: 580px;
   margin-top: 26px;
-  font-size: 0.98rem;
-  line-height: 1.68;
+  font-size: 1.05rem;
+  line-height: 1.72;
 }
 
 .personal-note {
@@ -1495,7 +1562,7 @@ footer a:hover {
   justify-content: space-between;
   min-height: calc(100svh - 76px - 92px);
   overflow: hidden;
-  padding: clamp(44px, 8vh, 110px) clamp(24px, 6vw, 96px) clamp(32px, 5vh, 72px);
+  padding: clamp(44px, 8vh, 110px) var(--gutter) clamp(32px, 5vh, 72px);
   color: var(--white);
   background: var(--green);
 }
@@ -1518,21 +1585,21 @@ footer a:hover {
 
 .contact-bottom > p {
   max-width: 530px;
-  color: #d5d7d0;
+  color: var(--soft-text);
   font-size: 1.05rem;
   line-height: 1.6;
 }
 
 .contact-links {
   display: grid;
-  border-top: 1px solid #718077;
+  border-top: 1px solid var(--line-on-dark);
 }
 
 .contact-links a {
   display: flex;
   justify-content: space-between;
   padding: clamp(13px, 2.2vh, 24px) 0 clamp(11px, 2vh, 22px);
-  border-bottom: 1px solid #718077;
+  border-bottom: 1px solid var(--line-on-dark);
   color: var(--white);
 }
 
@@ -1541,12 +1608,12 @@ footer {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  padding: 26px clamp(24px, 6vw, 96px);
-  color: #bcc2bd;
+  padding: 26px var(--gutter);
+  color: var(--soft);
   background: var(--green);
-  border-top: 1px solid #718077;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  border-top: 1px solid var(--line-on-dark);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -1592,7 +1659,7 @@ footer a {
 
 .links header p {
   margin: 8px 0 28px;
-  color: #c9cec8;
+  color: var(--soft-text);
 }
 
 .link-tree {
@@ -1605,12 +1672,12 @@ footer a {
   align-items: center;
   justify-content: center;
   padding: 15px;
-  border-bottom: 1px solid #718077;
+  border-bottom: 1px solid var(--line-on-dark);
   color: var(--white);
 }
 
 .link-tree a:first-child {
-  border-top: 1px solid #718077;
+  border-top: 1px solid var(--line-on-dark);
 }
 
 .link-tree i {
@@ -1657,7 +1724,7 @@ footer a {
   .hero-code-float {
     position: static;
     order: -1;
-    padding: 0 clamp(28px, 5.5vw, 88px) clamp(40px, 6vw, 64px);
+    padding: 0 var(--gutter) clamp(40px, 6vw, 64px);
     background: var(--green);
   }
 
@@ -1665,12 +1732,12 @@ footer a {
     grid-template-columns: 1fr;
   }
 
-  .race-mark {
+  .glyph-mark {
     grid-row: auto;
     order: 1;
   }
 
-  .race-letters {
+  .glyph-letters {
     grid-template-columns: repeat(4, 1em);
     font-size: clamp(4.2rem, 19vw, 7rem);
   }
@@ -1701,10 +1768,6 @@ footer a {
   .practice-section,
   .teaching-work {
     grid-template-columns: 1fr;
-  }
-
-  .accent-shape {
-    display: none;
   }
 
   .statement-details {
@@ -1828,11 +1891,16 @@ footer a {
   }
 
   .project {
-    padding: 64px 20px;
+    padding: 64px 24px;
   }
 
   .archive-list a {
     grid-template-columns: 1fr auto;
+  }
+
+  .repo-more {
+    width: 100%;
+    margin-top: 20px;
   }
 
   .archive-list span:nth-child(2) {
@@ -1843,7 +1911,7 @@ footer a {
     grid-template-columns: 1fr;
   }
 
-  .archive-feature--boutime figure {
+  .archive-feature--reverse figure {
     order: initial;
   }
 

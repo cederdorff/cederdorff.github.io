@@ -1,8 +1,10 @@
+import RoleMark from "./RoleMark";
+
 export default function AboutSection() {
   return (
     <section className="statement" aria-labelledby="about-heading">
       <p className="section-label">01 / About</p>
-      <div className="accent-shape accent-shape--ring" aria-hidden="true"></div>
+      <RoleMark />
       <div className="statement-body reveal">
         <h2 id="about-heading">Code is easier to learn when you have something real to build.</h2>
         <div className="statement-details">
