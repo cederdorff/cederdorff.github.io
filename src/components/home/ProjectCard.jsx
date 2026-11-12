@@ -10,7 +10,16 @@ export default function ProjectCard({ project, index }) {
       aria-label={`Visit ${project.title}`}
     >
       <figure className="project-figure--screenshot">
-        <img src={project.image} alt="" />
+        <img
+          src={project.image}
+          srcSet={`${project.image.replace(".webp", "-1200.webp")} 1200w, ${project.image} 2400w`}
+          sizes="(max-width: 900px) 100vw, 920px"
+          width="2400"
+          height="1525"
+          loading="lazy"
+          decoding="async"
+          alt=""
+        />
       </figure>
       <div className="project-copy">
         <div className="project-meta">

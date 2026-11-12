@@ -4,7 +4,7 @@ export default function ArchiveFeature({ className = "", image, imageAlt, role, 
   return (
     <article className={classes}>
       <figure>
-        <img src={image} alt={imageAlt} />
+        <img src={image} alt={imageAlt} loading="lazy" decoding="async" />
       </figure>
       <div>
         <p className="project-role">{role}</p>

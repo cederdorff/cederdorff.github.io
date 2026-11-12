@@ -4,7 +4,14 @@ export default function PersonalSection() {
   return (
     <section className="personal-note reveal" aria-labelledby="who-i-am-heading">
       <figure>
-        <img src="/img/new/race.webp" alt="Black and white portrait of Rasmus Cederdorff" />
+        <img
+          src="/img/new/race.webp"
+          srcSet="/img/new/race-1440.webp 1440w, /img/new/race.webp 2880w"
+          sizes="(max-width: 900px) 100vw, 50vw"
+          loading="lazy"
+          decoding="async"
+          alt="Black and white portrait of Rasmus Cederdorff"
+        />
       </figure>
       <div>
         <p className="section-label">Who I am</p>

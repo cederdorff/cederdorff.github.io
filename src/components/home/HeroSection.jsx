@@ -49,7 +49,13 @@ export default function HeroSection() {
       </div>
       <div className="hero-media">
         <figure className="hero-portrait">
-          <img src="/img/new/race_2024.webp" alt="Portrait of Rasmus Cederdorff in a yellow shirt" />
+          <img
+            src="/img/new/race_2024.webp"
+            srcSet="/img/new/race_2024-1200.webp 1200w, /img/new/race_2024.webp 2400w"
+            sizes="(max-width: 900px) 100vw, 46vw"
+            fetchPriority="high"
+            alt="Portrait of Rasmus Cederdorff in a yellow shirt"
+          />
         </figure>
         <div className="hero-code-float">
           <CodePanel settings={settings} onChange={updateSettings} />

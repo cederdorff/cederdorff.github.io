@@ -10,7 +10,7 @@ function repoPath(url) {
 
 export default function TeachingSection() {
   const [topic, setTopic] = useState(ALL);
-  const resources = topic === ALL ? teachingResources : teachingResources.filter((item) => item.topic === topic);
+  const resources = topic === ALL ? teachingResources : teachingResources.filter((item) => item.topics.includes(topic));
 
   return (
     <section className="teaching-work" aria-labelledby="teaching-work-heading">
@@ -41,7 +41,7 @@ export default function TeachingSection() {
           {resources.map((resource, index) => (
             <li style={{ "--i": index }} key={`${topic}-${resource.name}`}>
               <a className="repo-card" href={resource.url} target="_blank" rel="noreferrer">
-                <span className="repo-topic">{resource.topic}</span>
+                <span className="repo-topic">{resource.topics.join(" · ")}</span>
                 <span className="repo-name">{resource.name}</span>
                 <span className="repo-detail">{resource.detail}</span>
                 <span className="repo-path">
