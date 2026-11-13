@@ -1,0 +1,133 @@
+.about-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+  gap: clamp(40px, 7vw, 110px);
+  align-items: start;
+  margin-top: clamp(60px, 8vw, 112px);
+}
+
+.about-copy {
+  max-width: 680px;
+  font-size: clamp(1.06rem, 1.55vw, 1.38rem);
+  line-height: 1.68;
+}
+
+.about-facts {
+  margin: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.about-facts div {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: 20px;
+  padding: 22px 0 20px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.about-facts dt,
+.about-facts dd {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.about-facts dt {
+  padding-top: 0.1em;
+  color: var(--muted);
+  font-size: 0.74rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.personal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 760px;
+  background: var(--soft);
+}
+
+.personal figure {
+  overflow: hidden;
+}
+
+.personal img {
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% center;
+}
+
+.personal > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(64px, 9vw, 150px);
+}
+
+.personal h2 {
+  margin-top: clamp(42px, 6vw, 80px);
+  font-size: clamp(2.4rem, 4.5vw, 5rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.personal-copy {
+  max-width: 520px;
+  margin-top: 56px;
+}
+
+.personal-copy p {
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+.personal-copy p + p {
+  margin-top: 18px;
+}
+
+.personal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+}
+
+.personal-links .text-link {
+  min-width: 140px;
+}
+
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-details {
+    grid-template-columns: 1fr;
+  }
+
+  .personal {
+    grid-template-columns: 1fr;
+  }
+
+  .personal figure {
+    height: 74vw;
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 560px) {
+  .about {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .personal figure {
+    height: 105vw;
+    min-height: 460px;
+  }
+
+  .personal > div {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}

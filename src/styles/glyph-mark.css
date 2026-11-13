@@ -1,0 +1,106 @@
+.glyph-mark {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  color: var(--ink);
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.glyph-letters {
+  display: grid;
+  grid-template-columns: repeat(2, 1em);
+  grid-auto-rows: 1em;
+  gap: 0.06em;
+  font-size: clamp(5rem, 8.6vw, 9rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.glyph-letter {
+  --x: 0%;
+  --y: 0%;
+  --rotate: 0deg;
+  display: grid;
+  place-items: center;
+  transform: translate(var(--x), var(--y)) rotate(var(--rotate));
+  transition: transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1), color 300ms ease,
+    -webkit-text-stroke-color 300ms ease;
+}
+
+.glyph-letter--accent {
+  color: var(--accent);
+}
+
+.glyph-letter--green {
+  color: var(--green);
+}
+
+.glyph-letter--soft {
+  color: var(--soft);
+}
+
+.glyph-letter--outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--ink);
+}
+
+.glyph-mark:hover .glyph-letter:nth-child(odd) {
+  transform: translate(var(--x), var(--y)) rotate(calc(var(--rotate) + 8deg));
+}
+
+.glyph-mark:hover .glyph-letter:nth-child(even) {
+  transform: translate(var(--x), var(--y)) rotate(calc(var(--rotate) - 8deg));
+}
+
+.glyph-mark--roles .glyph-letters {
+  grid-template-columns: repeat(3, 0.82em);
+  font-size: clamp(4.6rem, 7.6vw, 8rem);
+}
+
+.glyph-letter--pop {
+  animation: glyphPop 520ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.glyph-hint--pop {
+  animation: hintIn 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hintIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@keyframes glyphPop {
+  from {
+    opacity: 0;
+    transform: scale(0.3) rotate(-40deg);
+  }
+}
+
+.glyph-hint {
+  display: block;
+  margin-top: 18px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+}
+
+@media (max-width: 900px) {
+  .glyph-mark {
+    grid-row: auto;
+    order: 1;
+  }
+
+  .glyph-letters {
+    grid-template-columns: repeat(4, 1em);
+    font-size: clamp(4.2rem, 19vw, 7rem);
+  }
+}

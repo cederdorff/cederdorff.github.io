@@ -1,0 +1,151 @@
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 76px;
+  padding: 16px var(--gutter);
+  color: var(--white);
+  background: rgba(38, 76, 89, 0.96);
+  border-bottom: 1px solid var(--line-on-dark);
+  backdrop-filter: blur(12px);
+}
+
+#about,
+#teaching,
+#work,
+#contact {
+  scroll-margin-top: 76px;
+}
+
+.wordmark {
+  display: block;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.wordmark img {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--white);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: clamp(18px, 3vw, 42px);
+}
+
+.nav-links a {
+  position: relative;
+  padding: 8px 0;
+  color: inherit;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after,
+.nav-links a.is-active::after {
+  transform: scaleX(1);
+}
+
+.nav-links a.is-active {
+  color: var(--white);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 26px var(--gutter);
+  color: var(--soft);
+  background: var(--green);
+  border-top: 1px solid var(--line-on-dark);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+footer a {
+  color: var(--white);
+}
+
+@media (max-width: 560px) {
+  .site-nav {
+    padding-top: 20px;
+  }
+
+  .nav-links {
+    gap: clamp(9px, 3vw, 14px);
+  }
+
+  .nav-links a {
+    padding: 14px 0;
+    font-size: clamp(0.62rem, 2.9vw, 0.72rem);
+    letter-spacing: 0.1em;
+  }
+
+  .nav-links a::after {
+    bottom: 7px;
+  }
+
+  .brand-lockup > span:last-child {
+    display: none;
+  }
+
+  .footer-brand > span:last-child {
+    display: inline;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
+
+@media (max-width: 900px), (pointer: coarse) {
+  .nav-links a {
+    padding: 14px 0;
+  }
+
+  .nav-links a::after {
+    bottom: 7px;
+  }
+
+  footer a {
+    padding: 12px 0;
+  }
+}

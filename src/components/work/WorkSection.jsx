@@ -1,0 +1,22 @@
+import { projects } from "../../data/projects";
+import ProjectCard from "./ProjectCard";
+
+export default function WorkSection() {
+  return (
+    <section className="work" aria-labelledby="work-heading">
+      <div className="work-heading reveal">
+        <p className="section-label">03 / Work</p>
+        <h2 id="work-heading">
+          <span>Recent</span>
+          <span>work</span>
+        </h2>
+      </div>
+
+      <div className="project-list">
+        {projects.map((project, index) => (
+          <ProjectCard project={project} index={index} key={project.title} />
+        ))}
+      </div>
+    </section>
+  );
+}
