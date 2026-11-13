@@ -21,7 +21,12 @@ export default function Home() {
 
   // scroll to /#section on first load (the section isn't rendered yet when the browser tries)
   useEffect(() => {
-    const id = decodeURIComponent(window.location.hash.slice(1));
+    let id;
+    try {
+      id = decodeURIComponent(window.location.hash.slice(1));
+    } catch {
+      return;
+    }
 
     if (id) document.getElementById(id)?.scrollIntoView({ behavior: "instant" });
   }, []);
