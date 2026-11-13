@@ -35,18 +35,18 @@ export default function Home() {
       <main id="main-content" tabIndex="-1">
         <HeroSection />
 
-        <div className="chapter" id="about">
+        <div id="about">
           <AboutSection />
           <PersonalSection />
         </div>
 
-        <div className="chapter" id="teaching">
+        <div id="teaching">
           <TeachingSection />
           <TeachingResources />
           <WorkBanner />
         </div>
 
-        <div className="chapter" id="work">
+        <div id="work">
           <WorkSection />
           <ArchiveSection />
         </div>

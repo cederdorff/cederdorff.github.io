@@ -5,7 +5,7 @@ import ArchiveFeature from "./ArchiveFeature";
 export default function ArchiveSection() {
   return (
     <section className="archive" aria-labelledby="archive-heading">
-      <div className="archive-intro reveal">
+      <div className="reveal">
         <p className="section-label">Earlier work</p>
         <h2 id="archive-heading">Apps, shops and client work from earlier years.</h2>
       </div>

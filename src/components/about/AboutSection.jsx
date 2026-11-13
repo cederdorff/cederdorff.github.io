@@ -5,7 +5,7 @@ export default function AboutSection() {
     <section className="about" aria-labelledby="about-heading">
       <p className="section-label">01 / About</p>
       <RoleMark />
-      <div className="about-body reveal">
+      <div className="reveal">
         <h2 id="about-heading">Code is easier to learn when you have something real to build.</h2>
         <div className="about-details">
           <p className="about-copy">
