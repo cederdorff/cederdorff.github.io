@@ -1,10 +1,10 @@
-import { projects } from "../../data/homeContent";
+import { projects } from "../../data/projects";
 import ProjectCard from "./ProjectCard";
 
 export default function WorkSection() {
   return (
     <section className="work" aria-labelledby="work-heading">
-      <div className="section-heading reveal">
+      <div className="work-heading reveal">
         <p className="section-label">03 / Work</p>
         <h2 id="work-heading">
           <span>Recent</span>

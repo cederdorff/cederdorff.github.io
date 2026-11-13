@@ -20,7 +20,6 @@ function pick(list) {
 
 function shuffle(current) {
   return {
-    // Hand each letter the next style, so every click visibly changes something.
     shift: (current.shift + 1) % STYLES.length,
     letters: current.letters.map((letter) => {
       const options = ANGLES.filter((angle) => angle !== letter.rotate);

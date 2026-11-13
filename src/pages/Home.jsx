@@ -1,15 +1,15 @@
 import { useEffect } from "react";
-import AboutSection from "../components/home/AboutSection";
-import ArchiveSection from "../components/home/ArchiveSection";
-import ContactSection from "../components/home/ContactSection";
-import HeroSection from "../components/home/HeroSection";
-import PersonalSection from "../components/home/PersonalSection";
-import PracticeSection from "../components/home/PracticeSection";
-import TeachingSection from "../components/home/TeachingSection";
-import WorkBanner from "../components/home/WorkBanner";
-import WorkSection from "../components/home/WorkSection";
+import AboutSection from "../components/about/AboutSection";
+import PersonalSection from "../components/about/PersonalSection";
+import ContactSection from "../components/contact/ContactSection";
+import HeroSection from "../components/hero/HeroSection";
 import SiteFooter from "../components/layout/SiteFooter";
 import SiteNav from "../components/layout/SiteNav";
+import TeachingResources from "../components/teaching/TeachingResources";
+import TeachingSection from "../components/teaching/TeachingSection";
+import ArchiveSection from "../components/work/ArchiveSection";
+import WorkBanner from "../components/work/WorkBanner";
+import WorkSection from "../components/work/WorkSection";
 import useActiveSection from "../hooks/useActiveSection";
 import useScrollReveal from "../hooks/useScrollReveal";
 
@@ -19,8 +19,7 @@ export default function Home() {
   const activeSection = useActiveSection(SECTION_IDS);
   useScrollReveal();
 
-  // A link such as /#work arrives before React has rendered the section,
-  // so the browser's own jump finds nothing. Do it again once the page exists.
+  // scroll to /#section on first load (the section isn't rendered yet when the browser tries)
   useEffect(() => {
     const id = decodeURIComponent(window.location.hash.slice(1));
 
@@ -42,8 +41,8 @@ export default function Home() {
         </div>
 
         <div className="chapter" id="teaching">
-          <PracticeSection />
           <TeachingSection />
+          <TeachingResources />
           <WorkBanner />
         </div>
 

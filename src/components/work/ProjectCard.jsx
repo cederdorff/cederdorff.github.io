@@ -1,6 +1,5 @@
 import Arrow from "../ui/Arrow";
 
-// Every project image is 2400×1525 with a 1200px variant next to it.
 function imageProps(project) {
   return {
     srcSet: `${project.image.replace(".webp", "-1200.webp")} 1200w, ${project.image} 2400w`,
@@ -13,7 +12,7 @@ function imageProps(project) {
 export default function ProjectCard({ project, index }) {
   const content = (
     <>
-      <figure className="project-figure--screenshot">
+      <figure className="project-figure">
         <img src={project.image} {...imageProps(project)} loading="lazy" decoding="async" alt="" />
       </figure>
       <div className="project-copy">
@@ -30,7 +29,7 @@ export default function ProjectCard({ project, index }) {
     </>
   );
 
-  // Projects without a public address (internal tools) are shown, but not linked.
+  // no url = internal project, shown without a link
   if (!project.url) {
     return <article className="project project--static reveal">{content}</article>;
   }

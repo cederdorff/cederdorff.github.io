@@ -1,16 +1,15 @@
 import { useRef, useState } from "react";
-import { teachingResources, teachingTopics } from "../../data/homeContent";
+import { teachingResources, teachingTopics } from "../../data/teaching";
 import Arrow from "../ui/Arrow";
 
 const ALL = "All";
-// Seven repos plus the "More on GitHub" card make two full rows of four on a desktop.
 const LIMIT = 7;
 
 function repoPath(url) {
   return new URL(url).pathname.slice(1);
 }
 
-export default function TeachingSection() {
+export default function TeachingResources() {
   const [topic, setTopic] = useState(ALL);
   const [expanded, setExpanded] = useState(false);
   const browserRef = useRef(null);
@@ -20,8 +19,7 @@ export default function TeachingSection() {
 
     setExpanded(!expanded);
 
-    // The list gets several screens shorter when it folds, so go back to its top
-    // instead of leaving the reader wherever the page happens to end up.
+    // back to the top of the list when it collapses
     if (collapsing) {
       requestAnimationFrame(() => browserRef.current?.scrollIntoView({ block: "start" }));
     }
@@ -30,10 +28,10 @@ export default function TeachingSection() {
   const visible = expanded ? resources : resources.slice(0, LIMIT);
 
   return (
-    <section className="teaching-work" aria-labelledby="teaching-work-heading">
-      <div className="teaching-intro reveal">
+    <section className="resources" aria-labelledby="resources-heading">
+      <div className="resources-intro reveal">
         <p className="section-label">Teaching in practice</p>
-        <h2 id="teaching-work-heading">The examples from class live on GitHub.</h2>
+        <h2 id="resources-heading">The examples from class live on GitHub.</h2>
         <p>
           I build exercises and starter projects so students have something concrete to explore, break and rebuild.
           Much of the material is shared openly on GitHub.

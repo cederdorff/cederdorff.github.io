@@ -1,4 +1,3 @@
-// Everything the live code panel in the hero is allowed to change.
 export const ACCENTS = [
   { name: "yellow", value: "#e7c960" },
   { name: "coral", value: "#f5a590" },

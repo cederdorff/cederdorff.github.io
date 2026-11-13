@@ -9,7 +9,6 @@ export default function HeroSection() {
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
   const accentColor = ACCENTS.find((item) => item.name === settings.accent).value;
 
-  // The accent is a custom property on the root, so one value restyles the whole page.
   useEffect(() => {
     document.documentElement.style.setProperty("--accent", accentColor);
 
@@ -43,7 +42,6 @@ export default function HeroSection() {
       </div>
       <div className="hero-media">
         <figure className="hero-portrait">
-          {/* Phones show the photo in a tall box, so they get a tall crop instead of an upscaled landscape file. */}
           <picture>
             <source media="(max-width: 560px)" srcSet="/img/new/race_2024-portrait.webp" />
             <img

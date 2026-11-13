@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import App from "./App.jsx";
-import "./main.css";
+import "./styles/index.css";
 
 console.log(
   "%c; %cHi! You opened the console, so we would probably get along.\nThe source is on GitHub: https://github.com/cederdorff/cederdorff.github.io \n// RACE",

@@ -2,7 +2,7 @@ import Arrow from "../ui/Arrow";
 
 export default function PersonalSection() {
   return (
-    <section className="personal-note reveal" aria-labelledby="who-i-am-heading">
+    <section className="personal reveal" aria-labelledby="who-i-am-heading">
       <figure>
         <picture>
           <source media="(max-width: 560px)" srcSet="/img/new/race-portrait.webp" />

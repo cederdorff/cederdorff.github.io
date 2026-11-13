@@ -1,6 +1,6 @@
-# Cederdorff.com
+# cederdorff.com
 
-Personal portfolio for Rasmus Cederdorff, built with React and Vite and deployed to GitHub Pages.
+My portfolio. React and Vite, deployed to GitHub Pages from `main`.
 
 ## Development
 
@@ -9,14 +9,19 @@ npm install
 npm run dev
 ```
 
-Use `npm run lint` to check the source and `npm run build` to create a production build.
+`npm run lint` checks the source, `npm run build` makes the production build.
 
 ## Structure
 
-- `src/components/home` contains the sections used on the portfolio page.
-- `src/components/layout` contains shared navigation and footer components.
-- `src/components/links` contains the `/links` page content.
-- `src/components/ui` contains small reusable interface elements.
-- `src/data` contains project and resource data.
-- `src/hooks` contains shared React behavior.
-- `public` contains only assets copied directly into the production build.
+```
+src/
+  pages/        Home and Links
+  components/   one folder per section: hero, about, teaching, work, contact
+                plus layout (nav, footer), links and ui
+  styles/       one stylesheet per section, imported in order from index.css
+  data/         projects, teaching repos and the hero playground settings
+  hooks/        active nav section and scroll reveal
+public/         files served as they are: images, og.jpg, cv, manifest
+```
+
+Project images are 2400×1525 WebP with a `-1200` variant next to each.

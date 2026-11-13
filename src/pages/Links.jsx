@@ -7,7 +7,7 @@ const ICONS_INTEGRITY =
   "sha512-JApjWRnfonFeGBY7t4yq8SWr1A6xVYEJgO/UMIYONxaR3C9GETKUg0LharbJncEzJF5Nmiv+Pr5QNulr81LjGQ==";
 
 export default function Links() {
-  // The icon font is only used on this page, so the front page no longer waits for it.
+  // Ionicons is only used on this page
   useEffect(() => {
     if (document.querySelector(`link[href="${ICONS_URL}"]`)) return;
 

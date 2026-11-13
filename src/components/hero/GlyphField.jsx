@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 
-// The brand alphabet: the letters of CEDERDORFF plus the symbols I type all day.
 const GLYPHS = ["C", "E", "D", "E", "R", "D", "O", "R", "F", "F", ";", "{", "}", "(", ")", "/", "+", "=", "<", ">"];
 
 const STEP = 1000 / 60;
@@ -74,7 +73,7 @@ export default function GlyphField({ count, gravity, accent }) {
       bodies.length = Math.min(bodies.length, target);
 
       if (wasGravity && !falling) {
-        // Gravity switched off: nudge everything back into the air.
+        // gravity off: kick everything back up
         bodies.forEach((body) => {
           body.vy = -random(2, 7);
           body.vx = random(-2, 2);
@@ -205,7 +204,7 @@ export default function GlyphField({ count, gravity, accent }) {
     }
 
     function renderStill() {
-      // Reduced motion: settle the simulation off-screen and show the result.
+      // reduced motion: run the simulation and draw one still frame
       syncBodies();
       for (let i = 0; i < (liveRef.current.gravity ? 420 : 1); i++) step();
       draw();
@@ -267,7 +266,7 @@ export default function GlyphField({ count, gravity, accent }) {
     resize();
     wakeRef.current = wake;
     wake();
-    // Redraw once the brand font is in, so the first frame is not a fallback face.
+    // redraw when Brown has loaded
     document.fonts?.load('700 60px "Brown"').then(() => reducedMotion && draw());
 
     resizeObserver.observe(canvas);

@@ -1,0 +1,126 @@
+.archive-list a.reveal:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+.archive-list a.reveal:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+.archive-list a.reveal:nth-child(4) {
+  transition-delay: 210ms;
+}
+
+.archive {
+  background: var(--soft);
+}
+
+.archive h2 {
+  margin-top: 28px;
+  font-size: clamp(2.5rem, 4.8vw, 5.2rem);
+}
+
+.archive-list {
+  align-self: end;
+  border-top: 1px solid var(--ink);
+}
+
+.archive-list a {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 24px;
+  padding: 32px 0 29px;
+  border-bottom: 1px solid var(--ink);
+  transition: padding 180ms ease, background 180ms ease;
+}
+
+.archive-list a:hover {
+  padding-right: 14px;
+  padding-left: 14px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.archive-list span:nth-child(2) {
+  color: var(--green);
+}
+
+.archive-content {
+  display: grid;
+  gap: clamp(56px, 7vw, 100px);
+  align-self: end;
+}
+
+.archive-features {
+  display: grid;
+  gap: 36px;
+}
+
+.archive-feature {
+  display: grid;
+  grid-template-columns: minmax(170px, 220px) 1fr;
+  overflow: hidden;
+  background: rgba(247, 247, 245, 0.5);
+}
+
+.archive-feature figure {
+  min-height: 220px;
+  background: #96c7c8;
+}
+
+.archive-feature img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.archive-feature > div {
+  align-self: center;
+  padding: clamp(32px, 5vw, 68px);
+}
+
+.archive-feature .project-role {
+  margin-top: 0;
+  color: var(--green);
+}
+
+.archive-feature h3 {
+  margin-top: 14px;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.archive-feature div > p:last-child {
+  max-width: 580px;
+  margin-top: 26px;
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+@media (max-width: 900px) {
+  .archive {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .archive {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .archive-list a {
+    grid-template-columns: 1fr auto;
+  }
+
+  .archive-list span:nth-child(2) {
+    display: none;
+  }
+
+  .archive-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-feature figure {
+    height: min(86vw, 420px);
+  }
+}

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 
-// One tag, and everything I am goes inside it in turn.
 const ROLES = [
-  { glyph: "?", label: "senior lecturer" }, // a lesson starts with a question
-  { glyph: "/", label: "web app developer" }, // the slash that closes the tag
+  { glyph: "?", label: "senior lecturer" },
+  { glyph: "/", label: "web app developer" },
   { glyph: "&", label: "husband" },
   { glyph: "+", label: "dad" },
-  { glyph: ";", label: "I’m RACE" } // the semicolon from my logo
+  { glyph: ";", label: "I’m RACE" }
 ];
 
 const TILTS = [
@@ -27,8 +26,7 @@ export default function RoleMark() {
 
   const next = () => setIndex((current) => (current + 1) % ROLES.length);
 
-  // Moves on by itself, but waits while you hover or focus it, and never starts
-  // for people who have asked for reduced motion. Keyed on index, so a click restarts the wait.
+  // auto-advance, paused on hover/focus and when reduced motion is on
   useEffect(() => {
     if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 

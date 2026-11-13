@@ -1,0 +1,111 @@
+.accent {
+  color: var(--accent);
+}
+
+.nav-links a,
+.text-link,
+.contact-links a,
+footer a {
+  transition: opacity 180ms ease;
+}
+
+.nav-links a:hover,
+.text-link:hover,
+.contact-links a:hover,
+footer a:hover {
+  opacity: 0.85;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.text-link:hover .arrow,
+.text-link:focus-visible .arrow,
+.project:hover .arrow,
+.project:focus-visible .arrow,
+.archive-list a:hover .arrow,
+.archive-list a:focus-visible .arrow,
+.contact-links a:hover .arrow,
+.contact-links a:focus-visible .arrow {
+  transform: translate(3px, -3px);
+}
+
+.work::before,
+.contact::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--white);
+  opacity: 0.07;
+  mask-image: url("/img/new/pattern.webp");
+  mask-repeat: repeat;
+  mask-size: 1400px;
+  -webkit-mask-image: url("/img/new/pattern.webp");
+  -webkit-mask-repeat: repeat;
+  -webkit-mask-size: 1400px;
+  pointer-events: none;
+}
+
+.section-label,
+.project-meta {
+  font-size: 0.74rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  min-width: 190px;
+  margin-top: clamp(44px, 4.6vw, 68px);
+  padding-bottom: 8px;
+  border-bottom: 1px solid currentColor;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-portrait picture,
+.personal picture {
+  display: contents;
+}
+
+.about,
+.archive {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2.25fr;
+  gap: clamp(40px, 7vw, 120px);
+  padding: clamp(112px, 14vw, 220px) var(--gutter);
+}
+
+.about > .section-label,
+.teaching > .section-label {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.section-label {
+  padding-top: 0.45em;
+}
+
+.about h2,
+.work-heading h2,
+.archive h2 {
+  max-width: 1080px;
+  font-size: clamp(2.6rem, 5.6vw, 6rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+
+@media (max-width: 900px), (pointer: coarse) {
+  .text-link {
+    padding-top: 12px;
+  }
+}

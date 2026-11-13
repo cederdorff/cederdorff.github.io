@@ -1,4 +1,4 @@
-import { archiveLinks } from "../../data/homeContent";
+import { archiveLinks } from "../../data/projects";
 import Arrow from "../ui/Arrow";
 import ArchiveFeature from "./ArchiveFeature";
 
