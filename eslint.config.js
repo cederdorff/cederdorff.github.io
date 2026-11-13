@@ -16,7 +16,15 @@ export default [
       },
       globals: {
         document: "readonly",
-        window: "readonly"
+        window: "readonly",
+        console: "readonly",
+        URL: "readonly",
+        IntersectionObserver: "readonly",
+        ResizeObserver: "readonly",
+        requestAnimationFrame: "readonly",
+        cancelAnimationFrame: "readonly",
+        setTimeout: "readonly",
+        clearTimeout: "readonly"
       }
     },
     plugins: {
@@ -28,6 +36,7 @@ export default [
       react: { version: "detect" }
     },
     rules: {
+      ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       "react/react-in-jsx-scope": "off",
