@@ -1,7 +1,7 @@
 import Arrow from "../ui/Arrow";
 
 const contactLinks = [
-  { label: "Email", url: "mailto:rasmus@cederdorff.com" },
+  { label: "Email", url: "mailto:rasmus@cederdorff.dk" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/cederdorff/" },
   { label: "Instagram", url: "https://www.instagram.com/cederdorff/" },
   { label: "GitHub", url: "https://github.com/cederdorff" }
