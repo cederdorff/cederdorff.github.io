@@ -41,9 +41,16 @@ export const projects = [
     role: "Design & development",
     description:
       "A shared tool for BouMatic employees covering time registration, absence, calendars and contacts. I designed and developed the original web and mobile app. The current version uses React Router 7, TypeScript and Tailwind CSS.",
-    image: "/img/boutime_web.webp",
-    imageWidth: 1000,
-    imageHeight: 750
+    image: "/img/projects/boutime-site.webp"
+  },
+  {
+    title: "House of Vincent",
+    type: "Jewellery & interior · Online store",
+    role: "Shopify theme & custom Liquid development",
+    description:
+      "House of Vincent is a Danish design brand with jewellery and objects for the home. I have worked on their Shopify store, adapting the theme and building custom features in Liquid where the standard setup did not do what the brand needed.",
+    image: "/img/projects/house-of-vincent-site.webp",
+    url: "https://houseofvincent.com/"
   }
 ];
 

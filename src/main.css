@@ -917,7 +917,8 @@ footer a:hover {
   max-width: none;
   margin-top: clamp(42px, 6vw, 88px);
   font-size: clamp(7rem, 15vw, 16rem);
-  letter-spacing: -0.055em;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   line-height: 0.68;
   text-transform: uppercase;
 }
@@ -933,6 +934,9 @@ footer a:hover {
 }
 
 .section-heading h2 span:last-child {
+  /* WORK sits up over the lower half of RECENT */
+  position: relative;
+  margin-top: -0.16em;
   color: var(--accent);
   transform: translateX(clamp(44px, 34vw, 680px));
 }
@@ -983,6 +987,17 @@ footer a:hover {
     100% 100%,
     0 calc(100% - var(--project-cut))
   );
+}
+
+/* A light project at the end runs straight into the light archive below it:
+   no slanted bottom edge, or a sliver of the dark background shows between them. */
+.project:nth-child(odd):last-child::before {
+  bottom: -1px;
+  clip-path: polygon(0 var(--project-cut), 100% 0, 100% 100%, 0 100%);
+}
+
+.project:nth-child(4n + 3):last-child::before {
+  clip-path: polygon(0 0, 100% var(--project-cut), 100% 100%, 0 100%);
 }
 
 .project:nth-child(odd) .project-meta {
