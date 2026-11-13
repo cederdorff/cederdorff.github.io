@@ -50,6 +50,10 @@ jobs:
       - name: Copy index.html to 404.html for SPA routing
         run: cp ./dist/index.html ./dist/404.html
 
+      # GitHub Pages serves links.html for /links, so that page answers 200 instead of 404
+      - name: Copy index.html to links.html
+        run: cp ./dist/index.html ./dist/links.html
+
       # Configure GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5

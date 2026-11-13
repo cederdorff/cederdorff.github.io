@@ -37,19 +37,23 @@ export default function HeroSection() {
             How I teach <span aria-hidden="true">↓</span>
           </a>
           <a className="text-link" href="#work">
-            Selected work <span aria-hidden="true">↓</span>
+            Work <span aria-hidden="true">↓</span>
           </a>
         </div>
       </div>
       <div className="hero-media">
         <figure className="hero-portrait">
-          <img
-            src="/img/new/race_2024.webp"
-            srcSet="/img/new/race_2024-1200.webp 1200w, /img/new/race_2024.webp 2400w"
-            sizes="(max-width: 900px) 100vw, 46vw"
-            fetchPriority="high"
-            alt="Portrait of Rasmus Cederdorff in a yellow shirt"
-          />
+          {/* Phones show the photo in a tall box, so they get a tall crop instead of an upscaled landscape file. */}
+          <picture>
+            <source media="(max-width: 560px)" srcSet="/img/new/race_2024-portrait.webp" />
+            <img
+              src="/img/new/race_2024.webp"
+              srcSet="/img/new/race_2024-1200.webp 1200w, /img/new/race_2024.webp 2400w"
+              sizes="(max-width: 900px) 150vw, 46vw"
+              fetchPriority="high"
+              alt="Portrait of Rasmus Cederdorff in a yellow shirt"
+            />
+          </picture>
         </figure>
         <div className="hero-code-float">
           <CodePanel settings={settings} onChange={updateSettings} />

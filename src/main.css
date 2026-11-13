@@ -70,6 +70,14 @@ a {
   outline-offset: 4px;
 }
 
+/* These turn light-on-dark when pressed or focused, so currentColor would draw a
+   white ring on the light page. Keep the ring dark. */
+.repo-filters button:focus-visible,
+.repo-card:focus-visible,
+.repo-more:focus-visible {
+  outline-color: var(--ink);
+}
+
 .skip-link {
   position: fixed;
   top: 12px;
@@ -94,8 +102,7 @@ p,
 h1,
 h2,
 h3,
-figure,
-blockquote {
+figure {
   margin: 0;
 }
 
@@ -322,6 +329,10 @@ footer a:hover {
   text-transform: uppercase;
 }
 
+.project-meta p {
+  line-height: 1.5;
+}
+
 .hero h1 {
   max-width: 920px;
   font-size: clamp(4rem, 8.3vw, 9rem);
@@ -387,6 +398,11 @@ footer a:hover {
   min-height: 620px;
   overflow: hidden;
   background: var(--soft);
+}
+
+.hero-portrait picture,
+.personal-note picture {
+  display: contents;
 }
 
 .hero-portrait img {
@@ -597,6 +613,10 @@ footer a:hover {
 .code-control:focus-visible {
   outline: 2px solid var(--white);
   outline-offset: -2px;
+}
+
+.code-control[aria-pressed="true"]:focus-visible {
+  outline-color: #1b2b30;
 }
 
 .code-control[aria-pressed="true"] {
@@ -839,6 +859,8 @@ footer a:hover {
 
 .practice-section {
   position: relative;
+  /* a shuffled RACE letter may poke past the edge on very narrow screens */
+  overflow-x: clip;
   display: grid;
   grid-template-columns: 1fr 2.25fr;
   gap: clamp(40px, 7vw, 120px);
@@ -1429,10 +1451,6 @@ footer a:hover {
 }
 
 .archive-list span:nth-child(2) {
-  color: var(--muted);
-}
-
-.archive-list span:nth-child(2) {
   color: var(--green);
 }
 
@@ -1462,25 +1480,6 @@ footer a:hover {
 .archive-feature img {
   height: 100%;
   object-fit: cover;
-}
-
-.archive-feature--reverse {
-  grid-template-columns: 1fr minmax(170px, 220px);
-}
-
-.archive-feature--reverse figure {
-  order: 2;
-}
-
-.archive-feature h3 a {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.archive-feature h3 a:hover .arrow,
-.archive-feature h3 a:focus-visible .arrow {
-  transform: translate(3px, -3px);
 }
 
 /* Not a link, so it should not react like one. */
@@ -1773,16 +1772,9 @@ footer a {
     min-height: 0;
   }
 
-  .hero-code-float {
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-  }
-
   .statement,
   .archive,
-  .practice-section,
-  .teaching-work {
+  .practice-section {
     grid-template-columns: 1fr;
   }
 
@@ -1927,10 +1919,6 @@ footer a {
     grid-template-columns: 1fr;
   }
 
-  .archive-feature--reverse figure {
-    order: initial;
-  }
-
   .archive-feature figure {
     height: min(86vw, 420px);
   }
@@ -1993,6 +1981,14 @@ footer a {
 
 /* Touch: the code controls and small links get a finger-sized hit area. */
 @media (max-width: 900px), (pointer: coarse) {
+  .nav-links a {
+    padding: 14px 0;
+  }
+
+  .nav-links a::after {
+    bottom: 7px;
+  }
+
   .hero .code-body {
     line-height: 2.5;
   }
@@ -2011,6 +2007,12 @@ footer a {
 
   footer a {
     padding: 12px 0;
+  }
+}
+
+@media (max-width: 374px) {
+  .lesson-loop .code-body {
+    font-size: 0.74rem;
   }
 }
 

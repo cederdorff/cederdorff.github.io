@@ -1,5 +1,5 @@
 const links = [
-  { label: "Selected work", url: "https://cederdorff.com/#work", icon: "ion-ios-bolt" },
+  { label: "Work", url: "https://cederdorff.com/#work", icon: "ion-ios-bolt" },
   { label: "Website", url: "https://cederdorff.com/", icon: "ion-ios-world" },
   { label: "Instagram", url: "https://www.instagram.com/cederdorff/", icon: "ion-social-instagram" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/cederdorff/", icon: "ion-social-linkedin" },

@@ -19,8 +19,8 @@ export default function ContactSection() {
       </div>
       <div className="contact-bottom">
         <p>
-          I don’t run a freelance studio, but you’re always welcome to write about a project—or about web development,
-          design or teaching.
+          I don’t run a freelance studio, but you’re always welcome to write to me about a project, or about web
+          development, design or teaching.
         </p>
         <div className="contact-links">
           {contactLinks.map((link) => {

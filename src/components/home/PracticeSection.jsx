@@ -15,7 +15,7 @@ export default function PracticeSection() {
         <div className="practice-split">
           <div className="practice-copy">
             <p>
-              My teaching is hands-on and iterative: a short introduction, then the students code and practice, then
+              My teaching is hands-on and iterative: a short introduction, then the students code and practise, then
               we sum up together and go again. I keep the introductions compact on purpose. I would rather not hand
               over everything up front, because students learn more when they have to investigate and work things out
               themselves.

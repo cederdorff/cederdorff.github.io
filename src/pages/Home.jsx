@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import AboutSection from "../components/home/AboutSection";
 import ArchiveSection from "../components/home/ArchiveSection";
 import ContactSection from "../components/home/ContactSection";
@@ -17,6 +18,14 @@ const SECTION_IDS = ["about", "teaching", "work", "contact"];
 export default function Home() {
   const activeSection = useActiveSection(SECTION_IDS);
   useScrollReveal();
+
+  // A link such as /#work arrives before React has rendered the section,
+  // so the browser's own jump finds nothing. Do it again once the page exists.
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+
+    if (id) document.getElementById(id)?.scrollIntoView({ behavior: "instant" });
+  }, []);
 
   return (
     <>

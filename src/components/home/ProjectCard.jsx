@@ -1,12 +1,7 @@
 import Arrow from "../ui/Arrow";
 
-// Site screenshots are 2400×1525 with a 1200px variant next to them.
-// Other images state their own size and are used as they are.
+// Every project image is 2400×1525 with a 1200px variant next to it.
 function imageProps(project) {
-  if (project.imageWidth) {
-    return { width: project.imageWidth, height: project.imageHeight };
-  }
-
   return {
     srcSet: `${project.image.replace(".webp", "-1200.webp")} 1200w, ${project.image} 2400w`,
     sizes: "(max-width: 900px) 100vw, 920px",

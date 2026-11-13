@@ -13,7 +13,7 @@ export const projects = [
     type: "Personal archive · Digital storytelling",
     role: "Research, storytelling, design & development",
     description:
-      "This personal archive brings together Paul M. Cederdorff’s art, stories and work as a teacher. I researched, designed and built it using artworks and material from the family archive.",
+      "Paul M. Cederdorff was my grandfather: an artist and a teacher, who died in 2026. This site gathers his art, his stories and his years of teaching in one place. I researched, designed and built it from his artworks and the material our family has kept.",
     image: "/img/projects/paul-cederdorff-site.webp",
     url: "https://cederdorff.dk/"
   },
@@ -29,9 +29,9 @@ export const projects = [
   {
     title: "Karolines Hus",
     type: "Gallery · React platform",
-    role: "UX/UI, React development & modernization",
+    role: "UX/UI, React development & modernisation",
     description:
-      "I rebuilt the gallery’s website on Fur with React, Vite and React Router. Exhibitions, artists and visitor information now have their own clear structure, including dedicated artist pages and an optimized WebP image workflow.",
+      "I rebuilt the website for this gallery on the island of Fur with React, Vite and React Router. Exhibitions, artists and visitor information now have their own clear structure, including dedicated artist pages and an optimised WebP image workflow.",
     image: "/img/projects/karolines-hus-site.webp",
     url: "https://karolineshus.dk/"
   },
@@ -40,7 +40,7 @@ export const projects = [
     type: "Work management · Web & mobile app",
     role: "Design & development",
     description:
-      "A shared tool for BouMatic employees covering time registration, absence, calendars and contacts. I designed and developed the original web and mobile app. The current version uses React Router 7, TypeScript and Tailwind CSS.",
+      "A shared tool for BouMatic employees covering time registration, absence, calendars and contacts. I designed and developed the original web and mobile app, and have since rebuilt it with React Router 7, TypeScript and Tailwind CSS.",
     image: "/img/projects/boutime-site.webp"
   },
   {
@@ -72,7 +72,7 @@ export const archiveLinks = [
   },
   {
     name: "Dansk Retursystem",
-    detail: "Booking forms, WordPress & GravityForms",
+    detail: "Booking forms, WordPress & Gravity Forms",
     url: "https://www.danskretursystem.dk/kundeservice/"
   }
 ];
@@ -95,7 +95,7 @@ export const teachingResources = [
   {
     name: "Next.js Supabase Posts",
     topics: ["Next.js"],
-    detail: "Auth, roles & row level security in Next.js",
+    detail: "Auth, roles & row-level security in Next.js",
     url: "https://github.com/cederdorff/nextjs-supabase-posts"
   },
   {
