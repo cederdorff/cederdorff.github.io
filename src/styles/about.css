@@ -109,9 +109,17 @@
     grid-template-columns: 1fr;
   }
 
+  .personal {
+    min-height: 0;
+  }
+
   .personal figure {
-    height: 74vw;
-    min-height: 520px;
+    height: 56vw;
+    min-height: 0;
+  }
+
+  .personal img {
+    object-position: 50% 30%;
   }
 }
 
@@ -122,8 +130,7 @@
   }
 
   .personal figure {
-    height: 105vw;
-    min-height: 460px;
+    height: 80vw;
   }
 
   .personal > div {

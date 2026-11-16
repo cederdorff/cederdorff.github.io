@@ -69,6 +69,7 @@
   display: inline-block;
   width: 9px;
   height: 1.15em;
+  margin-left: 6px;
   background: var(--accent);
   vertical-align: text-bottom;
   opacity: 0;

@@ -115,8 +115,8 @@ export default function CodePanel({ settings, onChange }) {
         </Line>
         <Line index={8}>
           <span className="punc">{"};"}</span>
+          <span className="code-cursor" style={{ "--i": 9 }} />
         </Line>
-        <span className="code-cursor" style={{ "--i": 9 }} />
       </div>
     </div>
   );

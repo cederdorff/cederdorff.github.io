@@ -162,21 +162,17 @@
   }
 }
 
+/* mobile: portrait fills the first screen behind the name,
+   code panel follows with the glyphs behind it so changes are visible */
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
-  }
-
-  .hero-copy {
-    padding-bottom: clamp(40px, 6vw, 64px);
+    grid-template-rows: auto auto;
+    min-height: 0;
   }
 
   .hero-media {
-    grid-column: 1;
-    grid-row: 2;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
+    display: contents;
   }
 
   .hero-media::after {
@@ -184,19 +180,69 @@
   }
 
   .hero-portrait {
-    height: 72svh;
-    min-height: 440px;
-  }
-
-  .hero-code-float {
-    position: static;
-    order: -1;
-    padding: 0 var(--gutter) clamp(40px, 6vw, 64px);
-    background: var(--green);
-  }
-
-  .hero-portrait {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    width: 100%;
+    height: auto;
     min-height: 0;
+    max-height: 78svh;
+    aspect-ratio: 3 / 4;
+    background: none;
+    /* fade the photo out instead of covering it, so no edge shows above the name */
+    -webkit-mask-image: linear-gradient(180deg, #000 62%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 62%, transparent 100%);
+  }
+
+  .hero-portrait img {
+    position: absolute;
+    inset: 0;
+    object-position: 50% 25%;
+  }
+
+  .hero-portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(38, 76, 89, 0.6) 0%,
+      rgba(38, 76, 89, 0) 24%,
+      rgba(38, 76, 89, 0) 45%,
+      rgba(38, 76, 89, 0.75) 85%
+    );
+    pointer-events: none;
+  }
+
+  .hero-copy {
+    min-height: min(100svh, 860px);
+    padding-bottom: clamp(36px, 6vw, 64px);
+  }
+
+  /* glyphs span the whole hero, above the portrait and below the copy */
+  .glyph-field {
+    z-index: 1;
+    grid-row: 1 / 3;
+  }
+
+  .hero-copy {
+    z-index: 2;
+  }
+
+  /* bottom padding leaves a floor where glyphs pile up with gravity on */
+  .hero-code-float {
+    position: relative;
+    z-index: 3;
+    grid-column: 1;
+    grid-row: 2;
+    inset: auto;
+    padding: clamp(8px, 2vw, 24px) var(--gutter) clamp(120px, 24vw, 180px);
+  }
+
+  .hero .text-link {
+    gap: 12px;
+    min-width: 0;
+    margin-top: clamp(28px, 5vw, 44px);
   }
 }
 
@@ -212,7 +258,7 @@
 
   .hero-roles {
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
   }
 
   .hero-roles li + li::before {
