@@ -57,10 +57,13 @@ export default function GlyphField({ count, gravity, accent }) {
 
     function resize() {
       const rect = canvas.getBoundingClientRect();
-      const ratio = Math.min(window.devicePixelRatio || 1, 2);
-
       width = rect.width;
       height = rect.height;
+
+      // the field is tall on mobile/tablet: cap resolution on large canvases to keep redraws cheap
+      const maxRatio = width * height > 1000000 ? 1.5 : 2;
+      const ratio = Math.min(window.devicePixelRatio || 1, maxRatio);
+
       canvas.width = Math.round(width * ratio);
       canvas.height = Math.round(height * ratio);
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
@@ -274,6 +277,8 @@ export default function GlyphField({ count, gravity, accent }) {
     window.addEventListener("pointermove", handlePointerMove, { passive: true });
     window.addEventListener("pointerdown", handlePointerMove, { passive: true });
     window.addEventListener("pointerup", handlePointerLeave);
+    // touch scrolls end in pointercancel, not pointerup
+    window.addEventListener("pointercancel", handlePointerLeave);
     document.addEventListener("pointerleave", handlePointerLeave);
     document.addEventListener("visibilitychange", wake);
 
@@ -285,6 +290,7 @@ export default function GlyphField({ count, gravity, accent }) {
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("pointerdown", handlePointerMove);
       window.removeEventListener("pointerup", handlePointerLeave);
+      window.removeEventListener("pointercancel", handlePointerLeave);
       document.removeEventListener("pointerleave", handlePointerLeave);
       document.removeEventListener("visibilitychange", wake);
     };
